@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import Gallery from './Pages/Gallery'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Gallery from "./Pages/Gallery";
 
 function App() {
   return (
-    <>
-      <Gallery />
-    </>
-  )
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<Gallery />} />
+    //     <Route path="/gallery/:frameId" element={<Gallery />} />
+    //   </Routes>
+    // </Router>
+    <Gallery />
+  );
 }
 
-export default App
+export default App;

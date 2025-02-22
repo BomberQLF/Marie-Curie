@@ -7,6 +7,7 @@ const CameraAnimation = ({ clicked }) => {
 
   gsap.to(camera.position, {
     z: clicked ? 3 : 5,
+    y: clicked ? .8 : 0,
     duration: 2,
     ease: "power2.inOut",
   });
