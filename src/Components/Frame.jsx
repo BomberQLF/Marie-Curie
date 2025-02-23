@@ -4,7 +4,7 @@ import { easing } from "maath";
 import { useRef, useState } from "react";
 import { MeshReflectorMaterial, Text } from "@react-three/drei";
 
-const Frame = ({ onClick, url, label }) => {
+const Frame = ({ onClick, url, label, position }) => {
   const [hovered, setHovered] = useState(false);
   const texture = useLoader(TextureLoader, url);
   const frame = useRef();
@@ -28,13 +28,13 @@ const Frame = ({ onClick, url, label }) => {
           ref={frame}
           onPointerEnter={() => setHovered(true)}
           onPointerLeave={() => setHovered(false)}
-          position={[0, .8, 0]} 
+          position={position}
         >
           <boxGeometry args={[2.5 + borderThickness * 2, 3.2 + borderThickness * 2, borderThickness]} />
           <meshStandardMaterial />
         </mesh>
 
-        <mesh position={[0, .8, 0.06]}>
+        <mesh position={[position[0], position[1], position[2] + 0.06]}>
           <planeGeometry args={[2.3, 3]} />
           <meshBasicMaterial map={texture} />
         </mesh>
@@ -56,7 +56,7 @@ const Frame = ({ onClick, url, label }) => {
       </mesh>
 
       <Text 
-        position={[2, 2.4, 0.1]}
+        position={[position[0], position[1] + 1.6, position[2] + 0.1]}
         fontSize={0.2}
         color="white"
         anchorX="center"
