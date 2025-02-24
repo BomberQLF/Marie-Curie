@@ -14,7 +14,7 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
     if (frame.current) {
       easing.dampC(
         frame.current.material.color,
-        hovered ? new Color("gold") : new Color("black"),
+        hovered ? new Color("white") : new Color("black"),
         0.25,
         delta
       );
@@ -39,7 +39,7 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
         </mesh>
 
         <Text 
-          position={[0, 2, 0.1]} // Ajuster la position du texte pour qu'il soit sous la frame
+          position={[0, 2, 0.1]}
           fontSize={0.2}
           color="white"
           anchorX="center"
@@ -52,15 +52,16 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
       <mesh position={[0, -1, 0]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[100, 100]} />
         <MeshReflectorMaterial
-          blur={[400, 100]} 
-          mixBlur={.8} 
-          mirror={0.7} 
-          resolution={2048} 
-          depthScale={0.2} 
+          blur={[300, 100]}
+          resolution={2048}
+          mixBlur={1}
+          mixStrength={80}
+          roughness={1}
+          depthScale={1.2}
           minDepthThreshold={0.4}
           maxDepthThreshold={1.4}
+          color="#050505"
           metalness={0.5}
-          mixStrength={5}
         />
       </mesh>
     </>
