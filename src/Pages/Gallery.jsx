@@ -62,8 +62,9 @@ const Gallery = () => {
     <Canvas
       style={{ background: "#111" }}
       camera={{ position: initialCameraPosition, fov: 90 }}
-      onCreated={({ scene }) => {
-        scene.fog = new Fog(0x333333, 2, 25);
+      onCreated={({ scene, camera }) => {
+        scene.fog = new Fog(0x333333, 2, 48);
+        camera.position.set(0, 15, 40);
       }}
     >
       <CameraAnimation

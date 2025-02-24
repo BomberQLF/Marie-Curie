@@ -14,7 +14,7 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
     if (frame.current) {
       easing.dampC(
         frame.current.material.color,
-        hovered ? new Color("white") : new Color("black"),
+        hovered ? new Color("#5555") : new Color("black"),
         0.25,
         delta
       );
