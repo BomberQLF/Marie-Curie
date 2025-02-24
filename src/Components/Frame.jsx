@@ -23,29 +23,38 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
 
   return (
     <>
-      <group onClick={onClick} rotation={rotation}>
+      <group onClick={onClick} position={position} rotation={rotation}>
         <mesh
           ref={frame}
           onPointerEnter={() => setHovered(true)}
           onPointerLeave={() => setHovered(false)}
-          position={position}
         >
           <boxGeometry args={[2.5 + borderThickness * 2, 3.2 + borderThickness * 2, borderThickness]} />
           <meshStandardMaterial />
         </mesh>
 
-        <mesh position={[position[0], position[1], position[2] + 0.06]}>
+        <mesh position={[0, 0, 0.06]}>
           <planeGeometry args={[2.3, 3]} />
           <meshBasicMaterial map={texture} />
         </mesh>
+
+        <Text 
+          position={[0, 2, 0.1]} // Ajuster la position du texte pour qu'il soit sous la frame
+          fontSize={0.2}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+        >
+          {label}
+        </Text>
       </group>
 
       <mesh position={[0, -1, 0]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[100, 100]} />
         <MeshReflectorMaterial
           blur={[400, 100]} 
-          mixBlur={.6} 
-          mirror={0.8} 
+          mixBlur={.8} 
+          mirror={0.7} 
           resolution={2048} 
           depthScale={0.2} 
           minDepthThreshold={0.4}
@@ -54,16 +63,6 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
           mixStrength={5}
         />
       </mesh>
-
-      <Text 
-        position={[position[0], position[1] + 1.6, position[2] + 0.1]}
-        fontSize={0.2}
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-      >
-        {label}
-      </Text>
     </>
   );
 };
