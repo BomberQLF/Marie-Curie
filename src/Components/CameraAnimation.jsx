@@ -6,6 +6,8 @@ const CameraAnimation = ({ clickedFrame, initialCameraPosition }) => {
   // Utilisation de usethtee ici pour pouvoir accéder à la caméra de threejs et pour éviter qu'elle croit que c'est une simple variable
   const { camera } = useThree();
 
+
+  // AJOUTER LE PROPS ROTATION VENANT DE LA FRAME --> pour que dans le composant camera je puisse séléctionner la rotation de la camera en fonction de la frame
   useEffect(() => {
     if (clickedFrame) {
       gsap.to(camera.position, {

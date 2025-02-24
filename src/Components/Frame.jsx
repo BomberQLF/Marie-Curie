@@ -4,7 +4,7 @@ import { easing } from "maath";
 import { useRef, useState } from "react";
 import { MeshReflectorMaterial, Text } from "@react-three/drei";
 
-const Frame = ({ onClick, url, label, position }) => {
+const Frame = ({ onClick, url, label, position, rotation }) => {
   const [hovered, setHovered] = useState(false);
   const texture = useLoader(TextureLoader, url);
   const frame = useRef();
@@ -23,7 +23,7 @@ const Frame = ({ onClick, url, label, position }) => {
 
   return (
     <>
-      <group onClick={onClick}>
+      <group onClick={onClick} rotation={rotation}>
         <mesh
           ref={frame}
           onPointerEnter={() => setHovered(true)}
