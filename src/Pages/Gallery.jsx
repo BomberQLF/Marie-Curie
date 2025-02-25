@@ -64,7 +64,7 @@ const Gallery = () => {
       camera={{ position: initialCameraPosition, fov: 90 }}
       onCreated={({ scene, camera }) => {
         scene.fog = new Fog(0x333333, 2, 48);
-        camera.position.set(0, 15, 40);
+        camera.position.set(0, 0, 45);
       }}
     >
       <CameraAnimation
