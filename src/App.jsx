@@ -6,10 +6,9 @@ function App() {
     // <Router>
     //   <Routes>
     //     <Route path="/" element={<Gallery />} />
-    //     <Route path="/gallery/:frameId" element={<Gallery />} />
     //   </Routes>
     // </Router>
-    <Gallery />
+    
   );
 }
 
