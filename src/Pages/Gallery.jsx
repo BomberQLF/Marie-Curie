@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import { useState } from "react";
 import CameraAnimation from "../Components/CameraAnimation";
 import Frame from "../Components/Frame";
@@ -63,7 +63,7 @@ const Gallery = () => {
       style={{ background: "#111" }}
       camera={{ position: initialCameraPosition, fov: 90 }}
       onCreated={({ scene, camera }) => {
-        scene.fog = new Fog(0x333333, 2, 48);
+        scene.fog = new Fog(0x333333, 10, 48);
         camera.position.set(0, 0, 45);
       }}
     >
@@ -84,8 +84,22 @@ const Gallery = () => {
           rotation={frame.rotation}
         />
       ))}
-      {/* <OrbitControls /> */}
-      <ambientLight intensity={0.2} />
+      <ambientLight intensity={0.3} color="#444" />
+      <directionalLight
+        position={[5, 10, 7.5]}
+        intensity={0.5}
+        castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+      />
+
+      <pointLight position={[-10, 10, -10]} intensity={0.5} color="#888" />
+      <pointLight position={[10, -10, 10]} intensity={0.5} color="#888" />
       <Environment preset="city" />
     </Canvas>
   );
