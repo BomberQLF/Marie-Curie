@@ -1,6 +1,6 @@
 const Creneau = ({ creneaux, onClick }) => {
     return (
-        <div className="flex flex-wrap gap-2 justify-evenly mt-12 mb-12 md:mt-16 md:gap-[3.5rem] creneau">
+        <div className="flex flex-wrap gap-2 justify-evenly mt-2 mb-12 md:mt-16 md:gap-[3.5rem] lg:m-0 creneau">
             {creneaux.map((item, index) => (
                 <button 
                     onClick={() => onClick(item)}
