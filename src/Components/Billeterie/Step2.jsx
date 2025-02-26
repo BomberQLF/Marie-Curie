@@ -37,8 +37,8 @@ const Step2 = () => {
         />
       </div>
       <div>
-        <div className="flex align-center gap-12">
-          <div>
+        <div className="flex flex-col align-center lg:gap-12 xl:flex-row">
+          <div className="flex flex-col">
             <BilletTarif
               ticketName={"Ticket Normal (+26 ans)"}
               price={"10 euros"}
@@ -59,12 +59,14 @@ const Step2 = () => {
           </div>
         </div>
         <div className="flex gap-4 justify-between mt-6">
-          <Link to="/billeterie/step1">
+          <Link to="/billeterie/step1"
+            state={{ selectedDate: selectedDate, selectedTime: selectedTime }}>
             <span className="uppercase text-white text-2xl underline lg:text-4xl">
               Retour
             </span>
           </Link>
-          <Link to="/billeterie/step3">
+          <Link to="/billeterie/step3"
+            state={{ selectedDate: selectedDate, selectedTime: selectedTime, counterNormal: counterNormal, counterEtudiant: counterEtudiant }}>
             <span className="uppercase text-white text-2xl underline lg:text-4xl">
               Suivant
             </span>
