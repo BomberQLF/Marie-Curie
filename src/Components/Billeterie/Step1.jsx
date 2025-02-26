@@ -20,12 +20,12 @@ const Step1 = () => {
 
   const handleDate = (date) => {
     setSelectedDate(date);
-    console.log(date);//a delete plus tard
+    console.log(date); //a delete plus tard
   };
   const handleTime = (time) => {
     setSelectedTime(time);
     console.log(time); //a delete plus tard
-  }
+  };
 
   return (
     <div className="flex flex-col justify-center">
@@ -33,22 +33,25 @@ const Step1 = () => {
         <h1 className="uppercase text-white text-2xl md:text-4xl lg:text-6xl">
           Choisissez votre date et créneau
         </h1>
-        <p className="text-white text-xs mt-4 md:text-xl md:mt-8 lg:mt-12 lg:text-2xl">
+        <p className="text-white text-xs mt-4 md:text-xl md:mt-8 lg:mt-12 lg:text-xl">
           Bienvenue sur la billetterie de l’exposition Marie Curie, une vie de
           lumière et d’ombre. Vous pouvez réserver un créneau d’une heure et une
           date pour pouvoir assister à l’exposition.
         </p>
       </div>
-      <div className="mt-6 calendar">
-        <Calendar selectedDate={handleDate} />
-        {selectedDate !== null && (
-          <p className="text-white text-xs mt-4 md:mt-6 md:text-lg lg:text-xl">
-            Vous avez choisi le : {selectedDate}
-          </p>
-        )}
-      </div>
-      <div>
-        <Creneau creneaux={horaires} onClick={handleTime} />
+      <div className="xl:flex xl:gap-56">
+        <div className="mt-6 calendar">
+          <Calendar selectedDate={handleDate} />
+          {selectedDate !== null && (
+            <p className="text-white text-xs mt-4 md:mt-6 md:text-lg lg:text-xl">
+              Vous avez choisi le : {selectedDate}
+            </p>
+          )}
+        </div>
+        <div className="lg:mt-12 wrapper-cren">
+          <h2 className="text-white uppercase my-4 lg:text-2xl lg:mx-6 lg:my-8">Créneau</h2>
+          <Creneau creneaux={horaires} onClick={handleTime} />
+        </div>
       </div>
       <div className="flex gap-4 justify-between mt-6">
         <Link to="/billeterie">
@@ -56,7 +59,10 @@ const Step1 = () => {
             Retour
           </span>
         </Link>
-        <Link to="/step2" state={{ selectedDate: selectedDate, selectedTime: selectedTime }}>
+        <Link
+          to="/step2"
+          state={{ selectedDate: selectedDate, selectedTime: selectedTime }}
+        >
           <span className="uppercase text-white text-2xl underline lg:text-4xl">
             Suivant
           </span>
