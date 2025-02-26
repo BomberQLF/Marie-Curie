@@ -37,6 +37,7 @@ const Step1 = () => {
           subtitle={`Bienvenue sur la billetterie de l’exposition Marie Curie, une vie de
           lumière et d’ombre. Vous pouvez réserver un créneau d’une heure et une
           date pour pouvoir assister à l’exposition.`}
+          step={"Étape 1"}
         />
       </div>
       <div className="xl:flex xl:gap-56 flex-grow">
