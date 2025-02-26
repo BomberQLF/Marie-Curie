@@ -18,8 +18,8 @@ const Creneau = ({ creneaux, onClick, title }) => {
           <button
             onClick={() => handleClick(item)}
             key={index}
-            className={`text-black text-sm py-1 px-6 rounded-2xl hover:bg-gray-500 transition md:text-lg lg:text-2xl lg:py-3 lg:px-8 
-              ${selectedCreneau === item ? "bg-transparent text-white" : "bg-gray-200 text-black"}`}
+            className={`text-black text-sm py-1 px-6 rounded-2xl hover:bg-[#70A666] transition md:text-lg lg:text-2xl lg:py-3 lg:px-8 
+              ${selectedCreneau === item ? "bg-[#70BA6C] text-white" : "bg-white text-black"}`}
           >
             {item}
           </button>
