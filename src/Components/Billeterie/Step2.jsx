@@ -10,12 +10,13 @@ const Step2 = () => {
   console.log(selectedTime);
 
   return (
-    <div>
+    <div className="flex flex-col justify-between h-full">
       <Header
         title={"Choisissez votre ticket"}
         subtitle={`À présent, vous pouvez choisir le type de billet que vous souhaitez !
         Vous pouvez choisir jusqu’à 10 billets pour être en groupe.`}
       />
+      {/* Ajoutez ici le contenu de Step2 */}
     </div>
   );
 };

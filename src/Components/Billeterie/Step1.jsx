@@ -23,19 +23,23 @@ const Step1 = () => {
     setSelectedDate(date);
     console.log(date); //a delete plus tard
   };
+
   const handleTime = (time) => {
     setSelectedTime(time);
     console.log(time); //a delete plus tard
   };
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-between h-full">
       <div>
-        <Header title={"Choisissez votre date et créneau"} subtitle={`Bienvenue sur la billetterie de l’exposition Marie Curie, une vie de
+        <Header
+          title={"Choisissez votre date et créneau"}
+          subtitle={`Bienvenue sur la billetterie de l’exposition Marie Curie, une vie de
           lumière et d’ombre. Vous pouvez réserver un créneau d’une heure et une
-          date pour pouvoir assister à l’exposition.`} />
+          date pour pouvoir assister à l’exposition.`}
+        />
       </div>
-      <div className="xl:flex xl:gap-56">
+      <div className="xl:flex xl:gap-56 flex-grow">
         <div className="mt-6 calendar">
           <Calendar selectedDate={handleDate} />
           {selectedDate !== null && (
