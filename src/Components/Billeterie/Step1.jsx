@@ -1,5 +1,6 @@
 import Calendar from "./Calendar";
 import Creneau from "./Creneau";
+import Header from "./Header";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -30,14 +31,9 @@ const Step1 = () => {
   return (
     <div className="flex flex-col justify-center">
       <div>
-        <h1 className="uppercase text-white text-2xl md:text-4xl lg:text-6xl">
-          Choisissez votre date et créneau
-        </h1>
-        <p className="text-white text-xs mt-4 md:text-xl md:mt-8 lg:mt-12 lg:text-xl">
-          Bienvenue sur la billetterie de l’exposition Marie Curie, une vie de
+        <Header title={"Choisissez votre date et créneau"} subtitle={`Bienvenue sur la billetterie de l’exposition Marie Curie, une vie de
           lumière et d’ombre. Vous pouvez réserver un créneau d’une heure et une
-          date pour pouvoir assister à l’exposition.
-        </p>
+          date pour pouvoir assister à l’exposition.`} />
       </div>
       <div className="xl:flex xl:gap-56">
         <div className="mt-6 calendar">
@@ -49,8 +45,7 @@ const Step1 = () => {
           )}
         </div>
         <div className="lg:mt-12 wrapper-cren">
-          <h2 className="text-white uppercase my-4 lg:text-2xl lg:mx-6 lg:my-8">Créneau</h2>
-          <Creneau creneaux={horaires} onClick={handleTime} />
+          <Creneau creneaux={horaires} title={"Créneau"} onClick={handleTime} />
         </div>
       </div>
       <div className="flex gap-4 justify-between mt-6">
@@ -60,7 +55,7 @@ const Step1 = () => {
           </span>
         </Link>
         <Link
-          to="/step2"
+          to="/billeterie/step2"
           state={{ selectedDate: selectedDate, selectedTime: selectedTime }}
         >
           <span className="uppercase text-white text-2xl underline lg:text-4xl">
