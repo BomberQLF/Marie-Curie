@@ -33,17 +33,6 @@ const Step2 = () => {
 
   const totalTickets = counterNormal + counterEtudiant;
 
-  // const resetForm = () => {
-  //   localStorage.removeItem("selectedDate");
-  //   localStorage.removeItem("selectedTime");
-  //   localStorage.removeItem("counterNormal");
-  //   localStorage.removeItem("counterEtudiant");
-  //   setSelectedDate(null);
-  //   setSelectedTime(null);
-  //   setCounterNormal(0);
-  //   setCounterEtudiant(0);
-  // };
-
   return (
     <div className="flex flex-col justify-between h-full">
       <div>
@@ -96,9 +85,6 @@ const Step2 = () => {
             </span>
           )}
         </div>
-        {/* <button onClick={resetForm} className="mt-4 p-2 bg-red-500 text-white rounded">
-          Réinitialiser le formulaire
-        </button> */}
       </div>
     </div>
   );
