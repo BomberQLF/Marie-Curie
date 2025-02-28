@@ -6,7 +6,7 @@ const Header = ({ title, subtitle, step }) => {
           <h1 className="uppercase text-white text-2xl md:text-4xl lg:text-5xl">
             {title}
           </h1>
-          <p className="text-white w-[14rem] text-xs mt-4 md:text-xl md:mt-8 md:w-[28rem] lg:mt-12 lg:text-xl xl:w-[54rem]">
+          <p className="text-white mb-[0.6rem] w-[14rem] text-xs mt-4 md:text-xl md:mt-8 md:w-[28rem] lg:mt-12 lg:text-xl xl:w-[54rem]">
             {subtitle}
           </p>
         </div>

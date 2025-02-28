@@ -21,7 +21,7 @@ const Creneau = ({ creneaux, onClick, title, reset }) => {
       <h2 className="text-white uppercase my-4 lg:text-2xl lg:mx-6 lg:my-8">
         {title}
       </h2>
-      <div className="flex flex-wrap gap-2 justify-evenly mt-2 mb-12 md:mt-16 md:gap-[3.5rem] lg:m-0 creneau">
+      <div className="flex flex-wrap gap-2 justify-evenly mt-2 md:mt-16 md:gap-[3.5rem] lg:m-0 creneau">
         {creneaux.map((item, index) => (
           <button
             onClick={() => handleClick(item)}
