@@ -2,11 +2,12 @@ import Calendar from "./Calendar";
 import Creneau from "./Creneau";
 import Header from "./Header";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Step1 = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(localStorage.getItem("selectedDate") || null);
+  const [selectedTime, setSelectedTime] = useState(localStorage.getItem("selectedTime") || null);
+
   const horaires = [
     "10:30",
     "11:30",
@@ -18,6 +19,11 @@ const Step1 = () => {
     "17:30",
     "18:30",
   ];
+
+  useEffect(() => {
+    localStorage.setItem("selectedDate", selectedDate);
+    localStorage.setItem("selectedTime", selectedTime);
+  }, [selectedDate, selectedTime]);
 
   const handleDate = (date) => {
     setSelectedDate(date);
@@ -43,7 +49,7 @@ const Step1 = () => {
       <div className="xl:flex xl:gap-56 flex-grow">
         <div className="mt-6 calendar">
           <Calendar selectedDate={handleDate} />
-          {selectedDate !== null && (
+          {selectedDate && (
             <p className="text-white text-xs mt-4 md:mt-6 md:text-lg lg:text-xl">
               Vous avez choisi le : {selectedDate}
             </p>
@@ -59,14 +65,20 @@ const Step1 = () => {
             Retour
           </span>
         </Link>
-        <Link
-          to="/billeterie/step2"
-          state={{ selectedDate: selectedDate, selectedTime: selectedTime }}
-        >
-          <span className="uppercase text-white text-2xl underline lg:text-4xl">
+        {selectedDate && selectedTime ? (
+          <Link
+            to="/billeterie/step2"
+            state={{ selectedDate: selectedDate, selectedTime: selectedTime }}
+          >
+            <span className="uppercase text-white text-2xl underline lg:text-4xl">
+              Suivant
+            </span>
+          </Link>
+        ) : (
+          <span className="uppercase text-gray-500 text-2xl underline lg:text-4xl cursor-not-allowed">
             Suivant
           </span>
-        </Link>
+        )}
       </div>
     </div>
   );

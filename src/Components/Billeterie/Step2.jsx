@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import Header from "./Header";
 import BilletTarif from "./BilletTarif";
@@ -6,18 +6,23 @@ import ImgBillet from '../../../public/assets/billetTest.svg'
 
 const Step2 = () => {
   const location = useLocation();
-  const [selectedDate, setSelectedDate] = useState(location.state.selectedDate);
-  const [selectedTime, setSelectedTime] = useState(location.state.selectedTime);
-  const [counterNormal, setCounterNormal] = useState(0);
-  const [counterEtudiant, setCounterEtudiant] = useState(0);
-  console.log(counterNormal);
-  console.log(counterEtudiant);
+  const [selectedDate, setSelectedDate] = useState(location.state?.selectedDate || localStorage.getItem("selectedDate"));
+  const [selectedTime, setSelectedTime] = useState(location.state?.selectedTime || localStorage.getItem("selectedTime"));
+  const [counterNormal, setCounterNormal] = useState(parseInt(localStorage.getItem("counterNormal")) || 0);
+  const [counterEtudiant, setCounterEtudiant] = useState(parseInt(localStorage.getItem("counterEtudiant")) || 0);
+
+  useEffect(() => {
+    localStorage.setItem("selectedDate", selectedDate);
+    localStorage.setItem("selectedTime", selectedTime);
+    localStorage.setItem("counterNormal", counterNormal);
+    localStorage.setItem("counterEtudiant", counterEtudiant);
+  }, [selectedDate, selectedTime, counterNormal, counterEtudiant]);
 
   const incrementCounterNormal = () => {
     setCounterNormal(counterNormal + 1);
   };
   const decrementCounterNormal = () => {
-    if (counterNormal > 0) setCounterNormal(counterEtudiant - 1);
+    if (counterNormal > 0) setCounterNormal(counterNormal - 1);
   };
   const incrementCounterEtudiant = () => {
     setCounterEtudiant(counterEtudiant + 1);
@@ -25,6 +30,19 @@ const Step2 = () => {
   const decrementCounterEtudiant = () => {
     if (counterEtudiant > 0) setCounterEtudiant(counterEtudiant - 1);
   };
+
+  // const resetForm = () => {
+  //   localStorage.removeItem("selectedDate");
+  //   localStorage.removeItem("selectedTime");
+  //   localStorage.removeItem("counterNormal");
+  //   localStorage.removeItem("counterEtudiant");
+  //   setSelectedDate(null);
+  //   setSelectedTime(null);
+  //   setCounterNormal(0);
+  //   setCounterEtudiant(0);
+  // };
+
+  const totalTickets = counterNormal + counterEtudiant;
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -65,12 +83,18 @@ const Step2 = () => {
               Retour
             </span>
           </Link>
-          <Link to="/billeterie/step3"
-            state={{ selectedDate: selectedDate, selectedTime: selectedTime, counterNormal: counterNormal, counterEtudiant: counterEtudiant }}>
-            <span className="uppercase text-white text-2xl underline lg:text-4xl">
+          {totalTickets > 0 ? (
+            <Link to="/billeterie/step3"
+              state={{ selectedDate: selectedDate, selectedTime: selectedTime, counterNormal: counterNormal, counterEtudiant: counterEtudiant }}>
+              <span className="uppercase text-white text-2xl underline lg:text-4xl">
+                Suivant
+              </span>
+            </Link>
+          ) : (
+            <span className="uppercase text-gray-500 text-2xl underline lg:text-4xl cursor-not-allowed">
               Suivant
             </span>
-          </Link>
+          )}
         </div>
       </div>
     </div>

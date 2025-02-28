@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 const Creneau = ({ creneaux, onClick, title }) => {
-  const [selectedCreneau, setSelectedCreneau] = useState(null);
+  const [selectedCreneau, setSelectedCreneau] = useState(localStorage.getItem("selectedCreneau") || null);
 
   const handleClick = (item) => {
     setSelectedCreneau(item);
+    localStorage.setItem("selectedCreneau", item);
     onClick(item);
   };
 
