@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 const Step1 = () => {
   const [selectedDate, setSelectedDate] = useState(localStorage.getItem("selectedDate") || null);
   const [selectedTime, setSelectedTime] = useState(localStorage.getItem("selectedTime") || null);
+  const [reset, setReset] = useState(false);
 
   const horaires = [
     "10:30",
@@ -35,6 +36,15 @@ const Step1 = () => {
     console.log(time); //a delete plus tard
   };
 
+  // const resetForm = () => {
+  //   localStorage.removeItem("selectedDate");
+  //   localStorage.removeItem("selectedTime");
+  //   localStorage.removeItem("selectedCreneau");
+  //   setSelectedDate(null);
+  //   setSelectedTime(null);
+  //   setReset(true);
+  // };
+
   return (
     <div className="flex flex-col justify-between h-full">
       <div>
@@ -56,7 +66,7 @@ const Step1 = () => {
           )}
         </div>
         <div className="lg:mt-12 wrapper-cren">
-          <Creneau creneaux={horaires} title={"Créneau"} onClick={handleTime} />
+          <Creneau creneaux={horaires} title={"Créneau"} onClick={handleTime} reset={reset} />
         </div>
       </div>
       <div className="flex gap-4 justify-between mt-6">
@@ -80,6 +90,9 @@ const Step1 = () => {
           </span>
         )}
       </div>
+      {/* <button onClick={resetForm} className="mt-4 p-2 bg-red-500 text-white rounded">
+        Réinitialiser le formulaire
+      </button> */}
     </div>
   );
 };
