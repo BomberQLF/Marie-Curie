@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Creneau = ({ creneaux, onClick, title }) => {
-  const [selectedCreneau, setSelectedCreneau] = useState(null);
+const Creneau = ({ creneaux, onClick, title, reset }) => {
+  const [selectedCreneau, setSelectedCreneau] = useState(localStorage.getItem("selectedCreneau") || null);
+
+  useEffect(() => {
+    if (reset) {
+      setSelectedCreneau(null);
+      localStorage.removeItem("selectedCreneau");
+    }
+  }, [reset]);
 
   const handleClick = (item) => {
     setSelectedCreneau(item);
+    localStorage.setItem("selectedCreneau", item);
     onClick(item);
   };
 
