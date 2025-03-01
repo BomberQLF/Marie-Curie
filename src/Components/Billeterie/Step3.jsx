@@ -71,7 +71,7 @@ const Step3 = () => {
         </Link>
         {name && lastname && email ? (
           <Link
-            to="/billeterie/confirmation"
+            to="/billeterie/step4"
             state={{
               selectedDate,
               selectedTime,
