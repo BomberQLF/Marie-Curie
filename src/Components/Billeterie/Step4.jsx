@@ -52,7 +52,7 @@ const Step4 = () => {
         selectedTime &&
         counterNormal &&
         counterEtudiant ? (
-          <Link to="/billeterie/avenir">
+          <Link to="/billeterie/remerciement">
             <span className="uppercase text-white text-2xl underline lg:text-4xl">
               Confirmer la commande
             </span>

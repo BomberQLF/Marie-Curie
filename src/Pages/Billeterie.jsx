@@ -5,6 +5,7 @@ import Step1 from "../Components/Billeterie/Step1";
 import Step2 from "../Components/Billeterie/Step2";
 import Step3 from "../Components/Billeterie/Step3";
 import Confirmation from "../Components/Billeterie/Step4";
+import Remerciement from "../Components/Billeterie/Remerciement";
 
 const Billeterie = () => {
   const location = useLocation();
@@ -20,6 +21,7 @@ const Billeterie = () => {
           <Route path="step2" element={<Step2 />} />
           <Route path="step3" element={<Step3 />} />
           <Route path="step4" element={<Confirmation />} />
+          <Route path="remerciement" element={<Remerciement />} />
           <Route path="*" element={<Navigate to="step1" />} />
         </Routes>
       </div>
