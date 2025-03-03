@@ -17,7 +17,7 @@ const CameraAnimation = ({ clickedFrame, initialCameraPosition }) => {
           lookAtPosition = { x: position[0], y: position[1], z: position[2] };
           break;
         case "TEST":
-          cameraPosition = { x: position[0] + 1, y: position[1], z: position[2] + 2 };
+          cameraPosition = { x: position[0] + 1, y: position[1], z: position[2] + 1 };
           lookAtPosition = { x: position[0] + 1, y: position[1], z: position[2] };
           break;
         case "ITEST":

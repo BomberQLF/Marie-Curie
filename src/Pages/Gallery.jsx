@@ -1,48 +1,48 @@
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
-import { useState } from "react";
+import { Environment, useGLTF, PointerLockControls } from "@react-three/drei";
+import { useState, useEffect } from "react";
 import CameraAnimation from "../Components/CameraAnimation";
 import Frame from "../Components/Frame";
-import { Fog } from "three";
 
 // tableau pour les données de chaque frame, ce qui facilite la gestion de la camera et des positionnements
 const framesData = [
   {
     url: "/public/assets/green-img.jpg",
     label: "Petite Curie",
-    position: [0, 0.8, 0],
+    position: [1.6, 3, 1],
     rotation: [0, 0, 0],
   },
   {
     url: "/public/assets/green-img.jpg",
     label: "TEST",
-    position: [-5.5, 0.8, -3],
-    rotation: [0, Math.PI / 6, 0],
+    position: [-4, 3, -6.8],
+    rotation: [0, 0, 0],
   },
   {
     url: "/public/assets/green-img.jpg",
     label: "ITEST",
-    position: [5.5, 0.8, -3],
-    rotation: [0, -Math.PI / 6, 0],
+    position: [7.5, 3, -6.8],
+    rotation: [0, 0, 0],
   },
   {
     url: "/public/assets/green-img.jpg",
     label: "TEST 3",
-    position: [-10, 0.8, 0],
-    rotation: [0, Math.PI / 3.5, 0],
+    position: [-5.5, 3, -3],
+    rotation: [0, Math.PI / 2, 0],
   },
   {
     url: "/public/assets/green-img.jpg",
     label: "test 4",
-    position: [10, 0.8, 0],
-    rotation: [0, -Math.PI / 3, 0],
+    position: [9, 3, -3],
+    rotation: [0, -Math.PI / 2, 0],
   },
 ];
 
-const initialCameraPosition = [0, -0.5, 11];
+const initialCameraPosition = [1, 2, 11];
 
 const Gallery = () => {
   const [clickedFrame, setClickedFrame] = useState(initialCameraPosition);
+  const { scene: gltfScene } = useGLTF('/public/scene/musee.glb');
 
   const handleFrameClick = (position, rotation, label) => {
     if (
@@ -61,9 +61,8 @@ const Gallery = () => {
   return (
     <Canvas
       style={{ background: "#111" }}
-      camera={{ position: initialCameraPosition, fov: 90 }}
+      camera={{ position: initialCameraPosition, fov: 70 }}
       onCreated={({ scene, camera }) => {
-        scene.fog = new Fog(0x333333, 10, 48);
         camera.position.set(0, 0, 45);
       }}
     >
@@ -84,10 +83,12 @@ const Gallery = () => {
           rotation={frame.rotation}
         />
       ))}
-      <ambientLight intensity={0.3} color="#444" />
+      <primitive object={gltfScene} position={[0, 0, 0]} scale={[6, 6, 6]} />
+      {/* <PointerLockControls /> */}
+      <ambientLight intensity={0.5} color="#ffffff" />
       <directionalLight
-        position={[5, 10, 7.5]}
-        intensity={0.5}
+        position={[1.6, 6, 1]}
+        intensity={1}
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
@@ -97,10 +98,7 @@ const Gallery = () => {
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-
-      <pointLight position={[-10, 10, -10]} intensity={0.5} color="#888" />
-      <pointLight position={[10, -10, 10]} intensity={0.5} color="#888" />
-      <Environment preset="city" />
+      {/* <Environment preset="studio" /> */}
     </Canvas>
   );
 };
