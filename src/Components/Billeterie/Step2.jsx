@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import BilletTarif from "./BilletTarif";
 import ImgBillet from '../../../public/assets/billetTest.svg'
+import Button from "./Button";
 
 const Step2 = () => {
   const location = useLocation();
@@ -10,6 +11,7 @@ const Step2 = () => {
   const [selectedTime, setSelectedTime] = useState(location.state?.selectedTime || localStorage.getItem("selectedTime"));
   const [counterNormal, setCounterNormal] = useState(parseInt(localStorage.getItem("counterNormal")) || 0);
   const [counterEtudiant, setCounterEtudiant] = useState(parseInt(localStorage.getItem("counterEtudiant")) || 0);
+  const [reset, setReset] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("selectedDate", selectedDate);
@@ -32,6 +34,19 @@ const Step2 = () => {
   };
 
   const totalTickets = counterNormal + counterEtudiant;
+
+  // const resetForm = () => {
+  //   localStorage.removeItem("selectedDate");
+  //   localStorage.removeItem("selectedTime");
+  //   localStorage.removeItem("counterNormal");
+  //   localStorage.removeItem("counterEtudiant");
+  //   localStorage.removeItem("selectedCreneau");
+  //   setSelectedDate(null);
+  //   setSelectedTime(null);
+  //   setCounterNormal(0);
+  //   setCounterEtudiant(0);
+  //   setReset(true);
+  // };
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -66,25 +81,21 @@ const Step2 = () => {
           </div>
         </div>
         <div className="flex gap-4 justify-between mt-6">
-          <Link to="/billeterie/step1"
-            state={{ selectedDate: selectedDate, selectedTime: selectedTime }}>
-            <span className="uppercase text-white text-2xl underline lg:text-4xl">
-              Retour
-            </span>
-          </Link>
-          {totalTickets > 0 ? (
-            <Link to="/billeterie/step3"
-              state={{ selectedDate: selectedDate, selectedTime: selectedTime, counterNormal: counterNormal, counterEtudiant: counterEtudiant }}>
-              <span className="uppercase text-white text-2xl underline lg:text-4xl">
-                Suivant
-              </span>
-            </Link>
-          ) : (
-            <span className="uppercase text-gray-500 text-2xl underline lg:text-4xl cursor-not-allowed">
-              Suivant
-            </span>
-          )}
+          <Button
+            to="/billeterie/step1"
+            state={{ selectedDate, selectedTime }}
+            text="Retour"
+          />
+          <Button
+            to="/billeterie/step3"
+            state={{ selectedDate, selectedTime, counterNormal, counterEtudiant }}
+            text="Suivant"
+            disabled={totalTickets === 0}
+          />
         </div>
+        {/* <button onClick={resetForm} className="mt-4 p-2 bg-red-500 text-white rounded">
+          Réinitialiser le formulaire
+        </button> */}
       </div>
     </div>
   );
