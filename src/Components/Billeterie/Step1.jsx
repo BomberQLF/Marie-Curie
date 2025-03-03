@@ -1,8 +1,8 @@
 import Calendar from "./Calendar";
 import Creneau from "./Creneau";
 import Header from "./Header";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Button from "./Button";
 
 const Step1 = () => {
   const [selectedDate, setSelectedDate] = useState(localStorage.getItem("selectedDate") || null);
@@ -28,12 +28,10 @@ const Step1 = () => {
 
   const handleDate = (date) => {
     setSelectedDate(date);
-    console.log(date); //a delete plus tard
   };
 
   const handleTime = (time) => {
     setSelectedTime(time);
-    console.log(time); //a delete plus tard
   };
 
   // const resetForm = () => {
@@ -70,25 +68,16 @@ const Step1 = () => {
         </div>
       </div>
       <div className="flex gap-4 justify-between mt-6">
-        <Link to="/billeterie">
-          <span className="uppercase text-white text-2xl underline lg:text-4xl">
-            Retour
-          </span>
-        </Link>
-        {selectedDate && selectedTime ? (
-          <Link
-            to="/billeterie/step2"
-            state={{ selectedDate: selectedDate, selectedTime: selectedTime }}
-          >
-            <span className="uppercase text-white text-2xl underline lg:text-4xl">
-              Suivant
-            </span>
-          </Link>
-        ) : (
-          <span className="uppercase text-gray-500 text-2xl underline lg:text-4xl cursor-not-allowed">
-            Suivant
-          </span>
-        )}
+        <Button
+          to="/billeterie"
+          text="Retour"
+        />
+        <Button
+          to="/billeterie/step2"
+          state={{ selectedDate, selectedTime }}
+          text="Suivant"
+          disabled={!selectedDate || !selectedTime}
+        />
       </div>
       {/* <button onClick={resetForm} className="mt-4 p-2 bg-red-500 text-white rounded">
         Réinitialiser le formulaire

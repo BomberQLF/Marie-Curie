@@ -1,7 +1,8 @@
 import Header from "./Header";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import FormComponent from "./FormComponent";
+import Button from "./Button";
 
 const Step3 = () => {
   const location = useLocation();
@@ -56,7 +57,7 @@ const Step3 = () => {
         />
       </div>
       <div className="flex gap-4 justify-between mt-6">
-        <Link
+        <Button
           to="/billeterie/step2"
           state={{
             selectedDate,
@@ -64,33 +65,22 @@ const Step3 = () => {
             counterNormal,
             counterEtudiant,
           }}
-        >
-          <span className="uppercase text-white text-2xl underline lg:text-4xl">
-            Retour
-          </span>
-        </Link>
-        {name && lastname && email ? (
-          <Link
-            to="/billeterie/step4"
-            state={{
-              selectedDate,
-              selectedTime,
-              counterNormal,
-              counterEtudiant,
-              name,
-              lastname,
-              email,
-            }}
-          >
-            <span className="uppercase text-white text-2xl underline lg:text-4xl">
-              Suivant
-            </span>
-          </Link>
-        ) : (
-          <span className="uppercase text-gray-500 text-2xl underline lg:text-4xl cursor-not-allowed">
-            Suivant
-          </span>
-        )}
+          text="Retour"
+        />
+        <Button
+          to="/billeterie/step4"
+          state={{
+            selectedDate,
+            selectedTime,
+            counterNormal,
+            counterEtudiant,
+            name,
+            lastname,
+            email,
+          }}
+          text="Suivant"
+          disabled={!name || !lastname || !email}
+        />
       </div>
     </div>
   );
