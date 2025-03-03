@@ -1,5 +1,5 @@
 import { useFrame, useLoader } from "@react-three/fiber";
-import { TextureLoader, Color } from "three";
+import { TextureLoader, Color, SpotLight } from "three";
 import { easing } from "maath";
 import { useRef, useState } from "react";
 import { MeshReflectorMaterial, Text } from "@react-three/drei";
@@ -8,8 +8,8 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
   const [hovered, setHovered] = useState(false);
   const texture = useLoader(TextureLoader, url);
   const frame = useRef();
-  const borderThickness = 0.1;
-
+  const borderThickness = 0.005;
+  
   useFrame((state, delta) => {
     if (frame.current) {
       easing.dampC(
