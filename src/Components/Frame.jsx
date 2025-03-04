@@ -9,7 +9,7 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
   const texture = useLoader(TextureLoader, url);
   const frame = useRef();
   const borderThickness = 0.005;
-  
+
   useFrame((state, delta) => {
     if (frame.current) {
       easing.dampC(
@@ -24,22 +24,28 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
   return (
     <>
       <group onClick={onClick} position={position} rotation={rotation}>
+        ...
         <mesh
           ref={frame}
           onPointerEnter={() => setHovered(true)}
           onPointerLeave={() => setHovered(false)}
         >
-          <boxGeometry args={[2.5 + borderThickness * 2, 3.2 + borderThickness * 2, borderThickness]} />
+          <boxGeometry
+            args={[
+              2.5 + borderThickness * 2,
+              4.2 + borderThickness * 2,
+              borderThickness,
+            ]}
+          />{" "}
+          {/* Augmenter la hauteur */}
           <meshStandardMaterial />
         </mesh>
-
         <mesh position={[0, 0, 0.06]}>
-          <planeGeometry args={[2.3, 3]} />
+          <planeGeometry args={[2.3, 4]} /> {/* Augmenter la hauteur */}
           <meshBasicMaterial map={texture} />
         </mesh>
-
-        <Text 
-          position={[0, 2, 0.1]}
+        <Text
+          position={[0, 3, 0.1]}
           fontSize={0.2}
           color="white"
           anchorX="center"
@@ -47,6 +53,7 @@ const Frame = ({ onClick, url, label, position, rotation }) => {
         >
           {label}
         </Text>
+        ...
       </group>
 
       <mesh position={[0, -1, 0]} rotation-x={-Math.PI / 2}>
