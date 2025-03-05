@@ -34,15 +34,6 @@ const Step1 = () => {
     setSelectedTime(time);
   };
 
-  // const resetForm = () => {
-  //   localStorage.removeItem("selectedDate");
-  //   localStorage.removeItem("selectedTime");
-  //   localStorage.removeItem("selectedCreneau");
-  //   setSelectedDate(null);
-  //   setSelectedTime(null);
-  //   setReset(true);
-  // };
-
   return (
     <div className="flex flex-col justify-between h-full">
       <div>
@@ -67,9 +58,9 @@ const Step1 = () => {
           <Creneau creneaux={horaires} title={"Créneau"} onClick={handleTime} reset={reset} />
         </div>
       </div>
-      <div className="flex gap-4 justify-between mt-6">
+      <div className="flex gap-4 justify-between mt-4 md:mt-6">
         <Button
-          to="/billeterie"
+          to="/"
           text="Retour"
         />
         <Button
@@ -79,9 +70,6 @@ const Step1 = () => {
           disabled={!selectedDate || !selectedTime}
         />
       </div>
-      {/* <button onClick={resetForm} className="mt-4 p-2 bg-red-500 text-white rounded">
-        Réinitialiser le formulaire
-      </button> */}
     </div>
   );
 };
