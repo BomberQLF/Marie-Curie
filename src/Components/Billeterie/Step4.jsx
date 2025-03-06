@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Recap from "./Recap";
+import Button from "./Button";
 
 const Step4 = () => {
   const location = useLocation();
@@ -15,7 +16,7 @@ const Step4 = () => {
 
   const handlePrice = () => {
     return counterEtudiant * 5 + counterNormal * 10;
-};
+  };
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -40,28 +41,19 @@ const Step4 = () => {
         />
       </div>
       <div className="flex gap-4 justify-between mt-6">
-        <Link to="/billeterie/step3" state={{ name, lastname, mail }}>
-          <span className="uppercase text-white text-2xl underline lg:text-4xl">
-            Retour
-          </span>
-        </Link>
+        <Button
+          to="/billeterie/step3"
+          state={{ name, lastname, mail }}
+          text="Retour"
+          disabled={false}
+        />
 
-        {name &&
-        lastname &&
-        selectedDate &&
-        selectedTime &&
-        counterNormal &&
-        counterEtudiant ? (
-          <Link to="/billeterie/remerciement">
-            <span className="uppercase text-white text-2xl underline lg:text-4xl">
-              Confirmer la commande
-            </span>
-          </Link>
-        ) : (
-          <span className="uppercase text-gray-500 text-2xl underline lg:text-4xl cursor-not-allowed">
-            Confirmer la commande
-          </span>
-        )}
+        <Button
+          to="/billeterie/remerciement"
+          state={{ name, lastname, mail, selectedDate, selectedTime, counterNormal, counterEtudiant }}
+          text="Confirmer la commande"
+          disabled={!(name && lastname && selectedDate && selectedTime && counterNormal && counterEtudiant)}
+        />
       </div>
     </div>
   );
