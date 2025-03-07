@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import FormComponent from "./FormComponent";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 const Step3 = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const Step3 = () => {
     localStorage.getItem("lastname") || ""
   );
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
+  const { t } = useTranslation();
 
   useEffect(() => {
     localStorage.setItem("name", name);
@@ -45,9 +47,9 @@ const Step3 = () => {
     <div className="flex flex-col justify-between h-full">
       <div>
         <Header
-          title="Coordonnées"
-          subtitle="Afin de vous envoyer vos tickets, nous avons besoin de quelques informations. Merci de bien vouloir remplir les champs ci-dessous."
-          step="Étape 3"
+          title={t("coordonnees")}
+          subtitle={t("subtitle3")}
+          step={t("step3")}
         />
       </div>
       <div>
@@ -65,7 +67,7 @@ const Step3 = () => {
             counterNormal,
             counterEtudiant,
           }}
-          text="Retour"
+          text={t("retour")}
         />
         <Button
           to="/billeterie/step4"
@@ -78,7 +80,7 @@ const Step3 = () => {
             lastname,
             email,
           }}
-          text="Suivant"
+          text={t("suivant")}
           disabled={!name || !lastname || !email}
         />
       </div>
