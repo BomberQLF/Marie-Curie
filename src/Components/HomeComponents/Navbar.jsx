@@ -12,9 +12,6 @@ const Navbar = () => {
         </div>
         <div className="flex space-x-6 items-center gap-4 md:gap-8 lg:gap-12">
           <li>
-            <a className="text-white font-thin md:text-xl lg:text-2xl" href="#">Agence</a>
-          </li>
-          <li>
             <Link className="text-white font-thin md:text-xl lg:text-2xl" to={"/billeterie/"}>Billeterie</Link>
           </li>
         </div>
