@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Recap from "./Recap";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 const Step4 = () => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const Step4 = () => {
   const [lastname, setLastname] = useState(location.state.lastname);
   const [mail, setMail] = useState(location.state.mail);
 
+  const { t } = useTranslation();
   const handlePrice = () => {
     return counterEtudiant * 5 + counterNormal * 10;
   };
@@ -22,10 +24,8 @@ const Step4 = () => {
     <div className="flex flex-col justify-between h-full">
       <div>
         <Header
-          title={"Résumé"}
-          subtitle={
-            "Vous êtes sur le point de confirmer votre commande. En le faisant, vous acceptez les conditions générales de vente ainsi que le traitement des données fournies par l'agence VisiOrama."
-          }
+          title={t("resume")}
+          subtitle={t("subtitle4")}
           step={null}
         />
       </div>
@@ -44,14 +44,14 @@ const Step4 = () => {
         <Button
           to="/billeterie/step3"
           state={{ name, lastname, mail }}
-          text="Retour"
+          text={t("retour")}
           disabled={false}
         />
 
         <Button
           to="/billeterie/remerciement"
           state={{ name, lastname, mail, selectedDate, selectedTime, counterNormal, counterEtudiant }}
-          text="Confirmer la commande"
+          text={t("confirmer")}
           disabled={!(name && lastname && selectedDate && selectedTime && counterNormal && counterEtudiant)}
         />
       </div>

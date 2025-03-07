@@ -3,11 +3,13 @@ import Creneau from "./Creneau";
 import Header from "./Header";
 import { useState, useEffect } from "react";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 const Step1 = () => {
   const [selectedDate, setSelectedDate] = useState(localStorage.getItem("selectedDate") || null);
   const [selectedTime, setSelectedTime] = useState(localStorage.getItem("selectedTime") || null);
   const [reset, setReset] = useState(false);
+  const { t } = useTranslation();
 
   const horaires = [
     "10:30",
@@ -38,11 +40,9 @@ const Step1 = () => {
     <div className="flex flex-col justify-between h-full">
       <div>
         <Header
-          title={"Choisissez votre date et créneau"}
-          subtitle={`Bienvenue sur la billetterie de l’exposition Marie Curie, une vie de
-          lumière et d’ombre. Vous pouvez réserver un créneau d’une heure et une
-          date pour pouvoir assister à l’exposition.`}
-          step={"Étape 1"}
+          title={t("choose_date")}
+          subtitle={t("subtitle")}
+          step={t("etape1")}
         />
       </div>
       <div className="xl:flex xl:gap-56 flex-grow">
@@ -50,23 +50,23 @@ const Step1 = () => {
           <Calendar selectedDate={handleDate} />
           {selectedDate && (
             <p className="text-white text-xs mt-4 md:mt-6 md:text-lg lg:text-xl">
-              Vous avez choisi le : {selectedDate}
+              {t("chosen_date")} {selectedDate}
             </p>
           )}
         </div>
         <div className="lg:mt-12 wrapper-cren">
-          <Creneau creneaux={horaires} title={"Créneau"} onClick={handleTime} reset={reset} />
+          <Creneau creneaux={horaires} title={t("creneau")} onClick={handleTime} reset={reset} />
         </div>
       </div>
       <div className="flex gap-4 justify-between mt-4 md:mt-6">
         <Button
           to="/"
-          text="Retour"
+          text={t("retour")}
         />
         <Button
           to="/billeterie/step2"
           state={{ selectedDate, selectedTime }}
-          text="Suivant"
+          text={t("suivant")}
           disabled={!selectedDate || !selectedTime}
         />
       </div>

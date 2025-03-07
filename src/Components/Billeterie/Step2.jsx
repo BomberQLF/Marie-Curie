@@ -4,6 +4,7 @@ import Header from "./Header";
 import BilletTarif from "./BilletTarif";
 import ImgBillet from '../../../public/assets/billetTest.svg'
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 const Step2 = () => {
   const location = useLocation();
@@ -12,6 +13,7 @@ const Step2 = () => {
   const [counterNormal, setCounterNormal] = useState(parseInt(localStorage.getItem("counterNormal")) || 0);
   const [counterEtudiant, setCounterEtudiant] = useState(parseInt(localStorage.getItem("counterEtudiant")) || 0);
   const [reset, setReset] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     localStorage.setItem("selectedDate", selectedDate);
@@ -35,41 +37,27 @@ const Step2 = () => {
 
   const totalTickets = counterNormal + counterEtudiant;
 
-  // const resetForm = () => {
-  //   localStorage.removeItem("selectedDate");
-  //   localStorage.removeItem("selectedTime");
-  //   localStorage.removeItem("counterNormal");
-  //   localStorage.removeItem("counterEtudiant");
-  //   localStorage.removeItem("selectedCreneau");
-  //   setSelectedDate(null);
-  //   setSelectedTime(null);
-  //   setCounterNormal(0);
-  //   setCounterEtudiant(0);
-  //   setReset(true);
-  // };
-
   return (
     <div className="flex flex-col justify-between h-full">
       <div>
         <Header
-          title={"Choisissez votre ticket"}
-          subtitle={`À présent, vous pouvez choisir le type de billet que vous souhaitez !
-          Vous pouvez choisir jusqu’à 10 billets pour être en groupe.`}
-          step={"Étape 2"}
+          title={t("chose_ticket")}
+          subtitle={t(`subtitle2`)}
+          step={t("etape2")}
         />
       </div>
       <div>
         <div className="flex flex-col align-center lg:gap-12 xl:flex-row">
           <div className="flex flex-col">
             <BilletTarif
-              ticketName={"Ticket Normal (+26 ans)"}
+              ticketName={t("ticket_normal")}
               price={"10 euros"}
               counter={counterNormal}
               increment={incrementCounterNormal}
               decrement={decrementCounterNormal}
             />
             <BilletTarif
-              ticketName={"Ticket Étudiant"}
+              ticketName={t("ticket_etudiant")}
               price={"5 euros"}
               counter={counterEtudiant}
               increment={incrementCounterEtudiant}
@@ -84,12 +72,12 @@ const Step2 = () => {
           <Button
             to="/billeterie/step1"
             state={{ selectedDate, selectedTime }}
-            text="Retour"
+            text={t("retour")}
           />
           <Button
             to="/billeterie/step3"
             state={{ selectedDate, selectedTime, counterNormal, counterEtudiant }}
-            text="Suivant"
+            text={t("suivant")}
             disabled={totalTickets === 0}
           />
         </div>

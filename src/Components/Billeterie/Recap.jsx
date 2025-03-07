@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const Recap = ({ date, time, counterNormal, counterEtudiant, name, lastname, totalPrice }) => {
+    const { t } = useTranslation();
+
     return (
       <div className="grid border border-[.5px] border-white">
         <div className="p-4 text-white">
@@ -9,16 +13,16 @@ const Recap = ({ date, time, counterNormal, counterEtudiant, name, lastname, tot
             <p className="text-sm md:text-lg lg:text-xl">{time}</p>
         </div>
         <div className="p-4 text-white expo dv">
-            <span className="font-thin text-sm md:text-lg lg:text-xl">Embarquer dans l’exposition :</span>
-            <p className="text-sm md:text-lg lg:text-xl">Une vie de lumière et d’ombre</p>
+            <span className="font-thin text-sm md:text-lg lg:text-xl">{t("expo_title")}</span>
+            <p className="text-sm md:text-lg lg:text-xl">{t("expo_subtitle")}</p>
         </div>
         <div className="p-4 text-white tarif">
             <div className="flex justify-between">
-                <div className="text-sm md:text-lg lg:text-xl">Tarif Normal</div>
+                <div className="text-sm md:text-lg lg:text-xl">{t("tarif_normal_resume")}</div>
                 <div className="text-sm md:text-lg lg:text-xl">{`x${counterNormal}`}</div>
             </div>
             <div className="flex justify-between">
-                <div className="text-sm md:text-lg lg:text-xl">Tarif Étudiant</div>
+                <div className="text-sm md:text-lg lg:text-xl">{t("tarif_normal_resume")}</div>
                 <div className="text-sm md:text-lg lg:text-xl">{`x${counterEtudiant}`}</div>
             </div>
         </div>
