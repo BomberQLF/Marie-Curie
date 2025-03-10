@@ -1,6 +1,7 @@
 import Navbar from "../Components/HomeComponents/Navbar";
 import Header from "../Components/HomeComponents/Header";
 import ArrowComp from "../Components/HomeComponents/Arrow";
+import SectionHistoire from "../Components/HomeComponents/SectionHistoire";
 
 const Home = () => {
   return (
@@ -9,6 +10,9 @@ const Home = () => {
         <Navbar />
         <Header />
         <ArrowComp />
+      </div>
+      <div className="relative h-[100vh] histoire">
+        <SectionHistoire />
       </div>
     </div>
   );

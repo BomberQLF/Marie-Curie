@@ -10,7 +10,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow: hidden;
   background-color: black;
 }
 
@@ -39,6 +38,17 @@ body {
 .calendar, .creneau {
   padding-bottom: 2rem;
   border-bottom: 1px solid white;
+}
+
+.histoire {
+  background-image: url("/public/assets/marieCurie-accueil.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.topBox {
+  rotate: 90deg;
 }
 
 .arrow_accueil {
