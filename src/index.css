@@ -41,6 +41,10 @@ body {
   border-bottom: 1px solid white;
 }
 
+.arrow_accueil {
+  rotate: 90deg;
+}
+
 @media (min-width: 1024px) {
   .creneau {
     padding-bottom: 5rem;
