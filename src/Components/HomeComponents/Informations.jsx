@@ -1,4 +1,4 @@
-import Grid from '../../../public/assets/aproposGrille.png';
+import Grid from '/assets/aproposGrille.png';
 
 const Informations = () => {
   return (
