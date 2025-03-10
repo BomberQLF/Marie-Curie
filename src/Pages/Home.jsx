@@ -3,6 +3,7 @@ import Header from "../Components/HomeComponents/Header";
 import ArrowComp from "../Components/HomeComponents/Arrow";
 import SectionHistoire from "../Components/HomeComponents/SectionHistoire";
 import Informations from "../Components/HomeComponents/Informations";
+import Footer from "../Components/HomeComponents/Footer";
 
 const Home = () => {
   return (
@@ -17,6 +18,9 @@ const Home = () => {
       </div>
       <div className="relative h-[100vh] apropos">
         <Informations />
+      </div>
+      <div className="h-[40vh]">
+        <Footer />
       </div>
     </div>
   );

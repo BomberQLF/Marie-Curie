@@ -1,6 +1,6 @@
-import SmallBox from '../../../public/assets/smallBox.svg';
-import Circle from '../../../public/assets/circleHistoire.svg';
-import CliqueCircle from '../../../public/assets/cliqueHistoire.svg';
+import SmallBox from '/assets/smallBox.svg';
+import Circle from '/assets/circleHistoire.svg';
+import CliqueCircle from '/assets/cliqueHistoire.svg';
 
 const SectionHistoire = () => {
   return (
