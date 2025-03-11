@@ -1,9 +1,12 @@
+// filepath: /Users/tommurphy/Documents/MMI/S4/marie-curie/src/Components/HomeComponents/Histoire.jsx
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import EtiquetteHistoire from "./EtiquetteHistoire";
 import Clique from '/assets/cliqueHistoire.svg';
 import { Link } from "react-router-dom";
 
 const Histoire = () => {
+  const { t } = useTranslation();
   const [counter, setCounter] = useState("01");
 
   const handleCounter = () => {
@@ -18,62 +21,62 @@ const Histoire = () => {
 
   const dataHistoire = [
     {
-      title: "Marie Curie : Un voyage vers l'inconnu",
+      title: t("histoire_title_01"),
       num: "01",
-      text: "Marie Curie déterminée à devenir scientifique, quitte sa Pologne natale pour Paris, prête à tout sacrifier pour étudier à la Sorbonne. Découvrez son voyage audacieux qui a marqué le début de son incroyable parcours vers l'inconnu.",
+      text: t("histoire_text_01"),
       img: "/assets/01.png",
     },
     {
-      title: "Radioactivité : Entre promesses et périls",
+      title: t("histoire_title_02"),
       num: "02",
-      text: "À la fin du XIXᵉ siècle, la découverte de la radioactivité par Pierre et Marie Curie révolutionne la science, entre promesses médicales et dangers éthiques. Une avancée qui transforme le monde.Découvrez comment cette découverte a transformé le monde, entre progrès médicaux et défis éthiques majeurs.",
+      text: t("histoire_text_02"),
       img: "/assets/02.png",
     },
     {
-      title: "Deux Prix Nobel, mille obstacles : Le combat de Marie Curie",
+      title: t("histoire_title_03"),
       num: "03",
-      text: "La première femme à recevoir un Prix Nobel a défié son époque pour voir son génie reconnu. Découvrez comment ses découvertes ont révolutionné la science tout en luttant contre les préjugés d’un monde scientifique dominé par les hommes.",
+      text: t("histoire_text_03"),
       img: "/assets/03.png",
     },
     {
-      title: "Les Petites Curies : La science au secours des blessés",
+      title: t("histoire_title_04"),
       num: "04",
-      text: `La pionnière de la science, aux côtés de sa fille Irène, transforme la radiologie en une arme de sauvetage pendant la guerre. Découvrez comment les "Petites Curies" ont révolutionné la médecine de guerre, apportant science et espoir au cœur des zones de combat.`,
+      text: t("histoire_text_04"),
       img: "/assets/04.png",
     },
     {
-      title: "Au prix de la science : Le sacrifice de Marie Curie",
+      title: t("histoire_title_05"),
       num: "05",
-      text: "La grande scientifique meurt des suites d’une maladie liée à son exposition aux radiations. Découvrez comment sa quête de la science, au péril de sa santé, l'a conduite à cette fin tragique.",
+      text: t("histoire_text_05"),
       img: "/assets/05.png",
     },
   ];
 
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 p-24 mt-20 relative">
-        <div className="pb-10 border-b w-[35%] border-white border-solid">
-          <div className="text-white w-fit text-5xl font-thin">Une expérience</div>
-          <div className="text-white w-fit text-5xl font-thin">immersive</div>
+    <div className="flex flex-col lg:flex-row h-screen">
+      <div className="w-full lg:w-1/2 p-6 lg:p-24 mt-20 relative">
+        <div className="pb-10 border-b w-full lg:w-[35%] border-white border-solid">
+          <div className="text-white w-fit text-3xl lg:text-5xl font-thin">{t("experience")}</div>
+          <div className="text-white w-fit text-3xl lg:text-5xl font-thin">{t("immersive")}</div>
         </div>
         <div>
-          <p className="text-white font-thin mt-12">Bienvenue dans l’exposition Marie Curie, Une vie de lumière et d'ombre. Vous vous apprêtez à vivre une expérience immersive qui vous plonge au cœur des moments décisifs de la vie de Marie Curie. À travers une série de tableaux représentant chaque étape clé de son parcours, vous découvrirez ses découverte s scientifiques majeures, ses luttes personnelles et son engagement indéfectible. Cette exposition vous offre un voyage visuel et émotionnel, où chaque tableau raconte une facette de l’histoire de cette figure emblématique, qui a profondément marqué l’histoire de la science et de l'humanité.</p>
+          <p className="text-white font-thin mt-12 max-w-full lg:max-w-[80%] lg:mb-12">{t("histoire_intro")}</p>
         </div>
-        <div>
+        <div className="flex flex-col lg:flex-row mt-6 lg:mt-0">
           <Link to="/">
-            <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
-              Revenir en arrière
+            <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition mb-4 lg:mb-0">
+              {t("back")}
             </button>
           </Link>
           <Link to="/gallery">
-            <button className="border mt-14 ml-10 border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
-              Découvrir l’exposition
+            <button className="border mt-4 lg:mt-0 lg:ml-10 border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
+              {t("discover_exhibition")}
             </button>
           </Link>
         </div>
-        <img onClick={handleCounter} src={Clique} alt="" className="absolute top-[50%] right-[-10%] cursor-pointer" />
+        <img onClick={handleCounter} src={Clique} alt="Cliquer pour voir l'étape suivante" className="absolute top-[50%] right-[-10%] lg:right-[-10%] cursor-pointer" />
       </div>
-      <div className="w-1/2">
+      <div className="w-full lg:w-1/2">
         <EtiquetteHistoire data={dataHistoire} num={counter} />
       </div>
     </div>
