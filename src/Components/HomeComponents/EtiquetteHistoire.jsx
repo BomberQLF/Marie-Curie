@@ -1,10 +1,6 @@
 const EtiquetteHistoire = ({ data, num }) => {
     const currentData = data.find(item => item.num === num);
   
-    if (!currentData) {
-      return <div className="p-6 text-white">Données non trouvées pour le numéro {num}</div>;
-    }
-  
     return (
       <div
         className="w-full h-full bg-cover bg-center flex items-end p-10"

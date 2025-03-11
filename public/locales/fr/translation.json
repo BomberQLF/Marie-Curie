@@ -34,5 +34,19 @@
   "confirmer_accueil": "Revenir à l'accueil",
   "titre_accueil": "Une vie de lumière et d'ombre",
   "trailer_accueil": "Découvrir le trailer",
-  "arrow_text": "Plus d'informations"
+  "arrow_text": "Plus d'informations",
+  "experience": "Une expérience",
+  "immersive": "immersive",
+  "histoire_intro": "Bienvenue dans l’exposition Marie Curie, Une vie de lumière et d'ombre. Vous vous apprêtez à vivre une expérience immersive qui vous plonge au cœur des moments décisifs de la vie de Marie Curie. À travers une série de tableaux représentant chaque étape clé de son parcours, vous découvrirez ses découverte s scientifiques majeures, ses luttes personnelles et son engagement indéfectible. Cette exposition vous offre un voyage visuel et émotionnel, où chaque tableau raconte une facette de l’histoire de cette figure emblématique, qui a profondément marqué l’histoire de la science et de l'humanité.",
+  "back": "Revenir en arrière",
+  "discover_exhibition": "Découvrir l’exposition",
+  "histoire_title_01": "Marie Curie : Un voyage vers l'inconnu",
+  "histoire_text_01": "Marie Curie déterminée à devenir scientifique, quitte sa Pologne natale pour Paris, prête à tout sacrifier pour étudier à la Sorbonne. Découvrez son voyage audacieux qui a marqué le début de son incroyable parcours vers l'inconnu.",
+  "histoire_title_02": "Radioactivité : Entre promesses et périls",
+  "histoire_text_02": "À la fin du XIXᵉ siècle, la découverte de la radioactivité par Pierre et Marie Curie révolutionne la science, entre promesses médicales et dangers éthiques. Une avancée qui transforme le monde.Découvrez comment cette découverte a transformé le monde, entre progrès médicaux et défis éthiques majeurs.",
+  "histoire_title_03": "Deux Prix Nobel, mille obstacles : Le combat de Marie Curie",
+  "histoire_text_03": "La première femme à recevoir un Prix Nobel a défié son époque pour voir son génie reconnu. Découvrez comment ses découvertes ont révolutionné la science tout en luttant contre les préjugés d’un monde scientifique dominé par les hommes.",
+  "histoire_title_04": "Les Petites Curies : La science au secours des blessés",
+  "histoire_text_04": "La pionnière de la science, aux côtés de sa fille Irène, transforme la radiologie en une arme de sauvetage pendant la guerre. Découvrez comment les 'Petites Curies' ont révolutionné la médecine de guerre, apportant science et espoir au cœur des zones de combat.",
+  "histoire_title_05": "Au prix de la science"
 }

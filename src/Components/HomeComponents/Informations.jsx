@@ -1,6 +1,10 @@
+// filepath: /Users/tommurphy/Documents/MMI/S4/marie-curie/src/Components/HomeComponents/Informations.jsx
+import { useTranslation } from "react-i18next";
 import Grid from '/assets/aproposGrille.png';
 
 const Informations = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="h-screen w-screen flex items-center justify-center relative overflow-x-hidden">
       <div className="p-6 h-[90vh] w-[85vw] border-[1px] border-white border-solid flex flex-col items-center lg:p-24 xl:p-16 content relative xl:flex-row xl:justify-between">
@@ -9,11 +13,11 @@ const Informations = () => {
         </div>
         <div className="mt-6 xl:mt-0 xl:w-1/2 xl:pl-12">
           <p className='text-white font-thin text-sm md:text-xl lg:text-2xl'>
-            Maria Skłodowska, connue plus tard sous le nom de Marie Curie, était une scientifique franco-polonaise qui a révolutionné l’étude de la radioactivité.
+            {t("maria_intro")}
           </p>
           <br />
           <p className='text-white font-thin text-sm md:text-xl lg:text-2xl'>
-            Ses recherches ont été fondamentales pour la médecine et la physique moderne. Malgré les défis liés à sa condition de femme scientifique à son époque, Maria Skłodowska a laissé un héritage scientifique exceptionnel qui inspire encore aujourd’hui.
+            {t("maria_legacy")}
           </p>
         </div>
         <div>
