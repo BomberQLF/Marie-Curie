@@ -1,4 +1,3 @@
-// filepath: /Users/tommurphy/Documents/MMI/S4/marie-curie/src/Components/HomeComponents/Histoire.jsx
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import EtiquetteHistoire from "./EtiquetteHistoire";

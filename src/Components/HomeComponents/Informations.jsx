@@ -1,4 +1,3 @@
-// filepath: /Users/tommurphy/Documents/MMI/S4/marie-curie/src/Components/HomeComponents/Informations.jsx
 import { useTranslation } from "react-i18next";
 import Grid from '/assets/aproposGrille.png';
 
