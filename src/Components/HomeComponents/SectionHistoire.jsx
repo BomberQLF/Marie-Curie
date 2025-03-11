@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const SectionHistoire = () => {
   const { t } = useTranslation();
 
+
   return (
     <div className="h-screen w-screen flex items-center justify-center relative overflow-x-hidden">
       <img src={SmallBox} alt="SmallBox" className='absolute bottom-[0] left-[0] h-[150px] md:h-[200px] lg:h-[240px]' />

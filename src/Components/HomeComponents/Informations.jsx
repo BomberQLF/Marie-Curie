@@ -20,9 +20,6 @@ const Informations = () => {
             {t("maria_legacy")}
           </p>
         </div>
-        <div>
-          {/* FOOTER ICI */}
-        </div>
       </div>
     </div>
   );

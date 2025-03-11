@@ -74,7 +74,12 @@ const Histoire = () => {
             </button>
           </Link>
         </div>
-        <img onClick={handleCounter} src={Clique} alt="Cliquer pour voir l'étape suivante" className="absolute top-[50%] right-[-10%] lg:right-[-10%] cursor-pointer" />
+        <img
+          onClick={handleCounter}
+          src={Clique}
+          alt="Cliquer pour voir l'étape suivante"
+          className="absolute top-[50%] right-[-10%] lg:right-[-10%] cursor-pointer z-10"
+        />      
       </div>
       <div className="w-full lg:w-1/2">
         <EtiquetteHistoire data={dataHistoire} num={counter} />
