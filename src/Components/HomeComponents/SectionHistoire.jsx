@@ -1,6 +1,7 @@
 import SmallBox from '/assets/smallBox.svg';
 import Circle from '/assets/circleHistoire.svg';
 import CliqueCircle from '/assets/cliqueHistoire.svg';
+import { Link } from 'react-router-dom';
 
 const SectionHistoire = () => {
   return (
@@ -17,9 +18,11 @@ const SectionHistoire = () => {
             </div>
           </div>
           <div className='absolute bottom-[-8.5rem] right-[1rem] md:bottom-[-11.5rem] lg:right-[2.5rem] lg:bottom-[-12rem] cursor-pointer'>
-            <div>
-                <img src={CliqueCircle} alt="" className='h-[60px] md:h-[100px] lg:h-[130px]' />
-            </div>
+            <Link to="/histoire">
+                <div>
+                    <img src={CliqueCircle} alt="" className='h-[60px] md:h-[100px] lg:h-[130px]' />
+                </div>
+            </Link>
           </div>
         </div>
       </div>

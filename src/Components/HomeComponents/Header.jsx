@@ -12,9 +12,9 @@ const Header = () => {
         </h2>
         <div className="mt-6">
           <div>
-            <div className="border border-white rounded-[22px] px-6 py-2 text-center md:m-auto md:max-w-[350px] lg:max-w-[430px]">
+            <div className="border border-white rounded-[22px] px-6 py-2 text-center md:m-auto md:max-w-[350px] lg:max-w-[430px]  hover:bg-white">
               <div>
-                <a className="text-white font-thin text-sm md:text-lg lg:text-xl" href="#">
+                <a className="text-white font-thin text-sm md:text-lg lg:text-xl hover:text-black px-[6.5rem] py-[1rem]" href="#">
                   {t("trailer_accueil")}
                 </a>
               </div>
