@@ -46,7 +46,7 @@ const Navbar = () => {
           <li>
             <div className="flex space-x-4 border border-white rounded-[22px] overflow-hidden">
               <button 
-                className={`px-4 py-2 border-none ${frClicked ? "bg-white text-black" : "text-white"}`} 
+                className={`px-4 py-2 border-none transition duration-300 ${frClicked ? "bg-white text-black" : "text-white"}`} 
                 onClick={(e) => {
                   changeLanguage("fr");
                   handleClick(e);
@@ -55,7 +55,7 @@ const Navbar = () => {
                 FR
               </button>
               <button 
-                className={`px-4 py-2 border-rounded-[22px] ${enClicked ? "bg-white text-black" : "text-white"}`} 
+                className={`px-4 py-2 border-rounded-[22px] transition duration-300 ${enClicked ? "bg-white text-black" : "text-white"}`} 
                 onClick={(e) => {
                   changeLanguage("en");
                   handleClick(e);

@@ -13,7 +13,7 @@ const Home = () => {
         <Header />
         <ArrowComp />
       </div>
-      <div className="relative h-[100vh] histoire">
+      <div className="relative h-[100vh] overflow-hidden histoire">
         <SectionHistoire />
       </div>
       <div className="relative h-[100vh] apropos">

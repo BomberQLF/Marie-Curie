@@ -1,17 +1,34 @@
-// filepath: /Users/tommurphy/Documents/MMI/S4/marie-curie/src/Components/HomeComponents/SectionHistoire.jsx
 import { useTranslation } from "react-i18next";
 import SmallBox from '/assets/smallBox.svg';
 import Circle from '/assets/circleHistoire.svg';
 import CliqueCircle from '/assets/cliqueHistoire.svg';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const SectionHistoire = () => {
   const { t } = useTranslation();
+  gsap.registerPlugin(ScrollTrigger);
 
+  useEffect(() => {
+    gsap.fromTo(".sectionHistoire", 
+      { scale: 1.1 }, 
+      { 
+        scale: .85, 
+        scrollTrigger: {
+          trigger: ".sectionHistoire",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        }
+      }
+    );
+  }, []);
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center relative overflow-x-hidden">
-      <img src={SmallBox} alt="SmallBox" className='absolute bottom-[0] left-[0] h-[150px] md:h-[200px] lg:h-[240px]' />
+    <div className="h-screen w-screen flex items-center justify-center relative overflow-x-hidden sectionHistoire">
+      <img src={SmallBox} alt="SmallBox" className='absolute bottom-[0] left-[0] h-[150px] md:h-[200px] lg:h-[240px] bottomBox' />
       <img src={SmallBox} alt="SmallBox" className='absolute top-[-1.3rem] right-[20px] h-[150px] md:h-[200px] md:top-[-1.7rem] lg:h-[240px] lg:top-[-1.9rem] topBox' />
       <div className="p-6 h-[90vh] justify-center w-[85vw] border-[3px] border-white border-solid flex flex-col items-center lg:p-24 xl:p-16 content relative">
         <div className='flex justify-center items-center relative'>
@@ -25,7 +42,7 @@ const SectionHistoire = () => {
           <div className='absolute bottom-[-8.5rem] right-[1rem] md:bottom-[-11.5rem] lg:right-[2.5rem] lg:bottom-[-12rem] cursor-pointer'>
             <Link to="/histoire">
               <div>
-                <img src={CliqueCircle} alt="" className='h-[60px] md:h-[100px] lg:h-[130px]' />
+                <img src={CliqueCircle} alt="" className='h-[60px] md:h-[100px] lg:h-[130px] cliqueCircle' />
               </div>
             </Link>
           </div>
