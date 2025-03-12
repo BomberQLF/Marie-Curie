@@ -5,7 +5,7 @@ const Button = ({ to, state, text, disabled }) => {
     <Link
       to={to}
       state={state}
-      className={`uppercase text-white text-lg underline lg:text-3xl md:text-lg lg:text-2xl lg:py-3 lg:px-8
+      className={`border mt-4 lg:mt-0 lg:ml-10 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition lg:text-2xl uppercase
         ${disabled ? "text-gray" : "text-white"}"
       `}
     >

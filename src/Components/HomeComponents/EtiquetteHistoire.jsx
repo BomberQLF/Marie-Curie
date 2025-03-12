@@ -12,7 +12,7 @@ const EtiquetteHistoire = ({ data, num }) => {
 
   return (
     <div
-      className="w-full h-full bg-cover bg-center flex items-end z-0 p-10 etiquette relative"
+      className="w-full h-[100vh] bg-cover bg-center flex items-end z-0 p-10 etiquette relative"
       style={{ backgroundImage: `url(${currentData.img})` }}
     >
       <div className="bg-black p-8 rounded-lg max-w-2xl text-white relative">
