@@ -13,7 +13,7 @@ const SectionHistoire = () => {
 
   useEffect(() => {
     gsap.fromTo(".sectionHistoire", 
-      { scale: 1.1 }, 
+      { scale: 1.2 }, 
       { 
         scale: .85, 
         scrollTrigger: {
