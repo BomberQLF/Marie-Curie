@@ -4,6 +4,7 @@ import Header from "./Header";
 import Recap from "./Recap";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import { Axios } from "axios";
 
 const Step4 = () => {
   const location = useLocation();
@@ -19,6 +20,10 @@ const Step4 = () => {
   const handlePrice = () => {
     return counterEtudiant * 5 + counterNormal * 10;
   };
+
+  const axios = require('axios'); 
+  // Suite de la requete POST quand l'API sera hebergé 
+
 
   return (
     <div className="flex flex-col justify-between h-full">
