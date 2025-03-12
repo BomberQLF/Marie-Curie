@@ -1,4 +1,4 @@
-import LogoVisiorama from "/assets/logoVisiorama.svg";
+import LogoVisiorama from "/assets/visiorama.svg";
 import Facebook from "/assets/Facebook.svg";
 import Instagram from "/assets/Instagram.svg";
 import { useTranslation } from "react-i18next";

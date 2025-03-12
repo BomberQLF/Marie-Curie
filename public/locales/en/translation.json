@@ -24,7 +24,7 @@
   "resume": "Summary",
   "subtitle4": "You are about to confirm your order. By doing so, you accept the general terms and conditions of sale as well as the processing of the data provided by the agency VisiOrama.",
   "expo_title": "Embark on the exhibition:",
-  "expo_subtitle": "A Life of Light and Shadow",
+  "expo_subtitle": "Light and Shadow",
   "tarif_normal_resume": "Normal Rate",
   "tarif_etudiant_resume": "Student Rate",
   "confirmer": "Confirm",
@@ -32,7 +32,7 @@
   "remerciement2": "Tickets are refundable only if the request is made at least 48 hours before the event, by email to the address indicated above.",
   "remerciement3": "We look forward to welcoming you! See you soon.",
   "confirmer_accueil": "Back to home",
-  "titre_accueil": "A Life of Light and Shadow",
+  "titre_accueil": "Light and Shadow",
   "trailer_accueil": "Discover the trailer",
   "arrow_text": "More information",
   "experience": "An experience",
@@ -54,8 +54,9 @@
   "legal_mentions": "Legal Mentions",
   "terms_conditions": "Terms and Conditions",
   "all_rights_reserved": "All rights reserved, VisiOrama © 2025",
-  "life_of": "A Life of",
-  "light_and_shadow": "Light and Shadow",
+  "life_of": "Light",
+  "light_and_shadow": "and Shadow",
   "maria_intro": "Maria Skłodowska, later known as Marie Curie, was a Franco-Polish scientist who revolutionized the study of radioactivity.",
-  "maria_legacy": "Her research was fundamental to modern medicine and physics. Despite the challenges related to her status as a female scientist in her time, Maria Skłodowska left an exceptional scientific legacy that still inspires today."
+  "maria_legacy": "Her research was fundamental to modern medicine and physics. Despite the challenges related to her status as a female scientist in her time, Maria Skłodowska left an exceptional scientific legacy that still inspires today.",
+  "about": "About"
 }

@@ -21,7 +21,7 @@ const Step4 = () => {
     return counterEtudiant * 5 + counterNormal * 10;
   };
 
-  const axios = require('axios'); 
+  // const axios = require('axios'); 
   // Suite de la requete POST quand l'API sera hebergé 
 
 

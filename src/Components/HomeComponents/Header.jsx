@@ -7,7 +7,7 @@ const Header = () => {
     <div>
       <div className="p-12">
         <h1 className="uppercase text-white font-bold text-4xl md:text-6xl md:ml-14 lg:ml-32 xl:text-8xl xl:text-center xl:m-0 xl:tracking-wide"><span>Marie</span> Curie</h1>
-        <h2 className="text-right font-thin text-white text-lg md:text-2xl md:mr-16 lg:mr-32 lg:text-3xl xl:mr-52 xl:text-4xl">
+        <h2 className="text-right font-thin text-white text-lg md:text-2xl md:mr-16 lg:mr-32 lg:text-3xl xl:mr-[20rem] xl:text-4xl">
           {t("titre_accueil")}
         </h2>
         <div className="mt-6">
