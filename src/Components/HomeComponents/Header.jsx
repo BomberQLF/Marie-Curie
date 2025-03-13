@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import Statue from "../Statue/Statue";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -22,7 +23,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div>EMPTY</div>
     </div>
   );
 };
