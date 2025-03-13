@@ -4,11 +4,15 @@ import ArrowComp from "../Components/HomeComponents/Arrow";
 import SectionHistoire from "../Components/HomeComponents/SectionHistoire";
 import Informations from "../Components/HomeComponents/Informations";
 import Footer from "../Components/HomeComponents/Footer";
+import Statue from "../Components/Statue/Statue";
 
 const Home = () => {
   return (
     <div>
-      <div className="relative header h-[100vh]">
+      <div className="absolute h-[100vh] w-[100vw]">
+        <Statue />
+      </div>
+      <div className="relative header flex flex-col h-[100vh]">
         <Navbar />
         <Header />
         <ArrowComp />
