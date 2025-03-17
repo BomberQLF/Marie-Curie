@@ -29,7 +29,7 @@ const SectionHistoire = () => {
   return (
     <div className="h-screen w-screen flex items-center justify-center relative overflow-x-hidden sectionHistoire">
       <img src={SmallBox} alt="SmallBox" className='absolute bottom-[0] left-[0] h-[150px] md:h-[200px] lg:h-[240px] bottomBox' />
-      <img src={SmallBox} alt="SmallBox" className='absolute top-[-1.3rem] right-[20px] h-[150px] md:h-[200px] md:top-[-1.7rem] lg:h-[240px] lg:top-[-1.9rem] topBox' />
+      <img src={SmallBox} alt="SmallBox" className='absolute top-[-1.3rem] right-[20px] h-[150px] md:h-[200px] md:top-[-1.7rem] lg:h-[240px] lg:top-[2.1rem] topBox' />
       <div className="p-6 h-[90vh] justify-center w-[85vw] border-[3px] border-white border-solid flex flex-col items-center lg:p-24 xl:p-16 content relative">
         <div className='flex justify-center items-center relative'>
           <img src={Circle} alt="Circle" className='h-[150px] md:h-[250px] lg:h-[350px]' />
