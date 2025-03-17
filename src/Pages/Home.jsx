@@ -9,7 +9,7 @@ import Statue from "../Components/Statue/Statue";
 const Home = () => {
   return (
     <div>
-      <div className="absolute h-[100vh] w-[100vw]">
+      <div className="absolute h-[100vh] w-[100vw] overflow-x-hidden">
         <Statue />
       </div>
       <div className="relative header flex flex-col h-[100vh]">

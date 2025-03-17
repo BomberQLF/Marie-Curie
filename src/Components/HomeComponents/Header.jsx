@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import Statue from "../Statue/Statue";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -12,7 +11,7 @@ const Header = () => {
           {t("titre_accueil")}
         </h2>
         <div className="mt-6">
-          <div>
+          <div className="absolute bottom-[50px] left-[50%] btn-trailer">
             <div className="border border-white rounded-[22px] px-6 py-2 text-center md:m-auto md:max-w-[350px] lg:max-w-[430px]  hover:bg-white">
               <div>
                 <a className="text-white font-thin text-sm md:text-lg lg:text-xl hover:text-black lg:px-[6.5rem] lg:py-[1rem]" href="#">

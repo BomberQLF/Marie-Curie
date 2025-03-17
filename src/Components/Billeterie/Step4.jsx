@@ -4,7 +4,7 @@ import Header from "./Header";
 import Recap from "./Recap";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
-import { Axios } from "axios";
+import axios from "axios";
 
 const Step4 = () => {
   const location = useLocation();
@@ -21,9 +21,33 @@ const Step4 = () => {
     return counterEtudiant * 5 + counterNormal * 10;
   };
 
-  // const axios = require('axios'); 
-  // Suite de la requete POST quand l'API sera hebergé 
+  const dataUser = {
+    name: name,
+    lastname: lastname,
+    mail: mail
+  };
+  const dataReservation = {
+    date: selectedDate,
+    time: selectedTime,
+    counterNormal: counterNormal,
+    counterEtudiant: counterEtudiant,
+    totalPrice: handlePrice()
+  };
 
+  const postDataUser = async () => {
+    try {
+      const userResponse = await axios.post('https://mcapi.duhez.butmmi.o2switch.site/index.php/users', dataUser);
+      console.log(userResponse);
+
+      const reservationResponse = await axios.post('https://mcapi.duhez.butmmi.o2switch.site/index.php/reservation', dataReservation);
+      console.log(reservationResponse);
+
+      // Réinitialiser le local storage
+      localStorage.clear();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -55,6 +79,10 @@ const Step4 = () => {
 
         <Button
           to="/billeterie/remerciement"
+          onClick={async () => {
+            await postDataUser();
+            localStorage.clear();
+          }}
           state={{ name, lastname, mail, selectedDate, selectedTime, counterNormal, counterEtudiant }}
           text={t("confirmer")}
           disabled={!(name && lastname && selectedDate && selectedTime && counterNormal && counterEtudiant)}

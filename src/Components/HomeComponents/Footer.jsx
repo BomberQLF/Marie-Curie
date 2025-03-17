@@ -18,8 +18,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between w-full gap-6">
           <div className="flex flex-col md:items-start">
             <div className="flex gap-4">
-              <img src={Instagram} alt="Instagram" className="h-[40px] md:h-[50px]" />
-              <img src={Facebook} alt="Facebook" className="h-[40px] md:h-[50px]" />
+              <img src={Instagram} alt="Instagram" className="h-[40px] md:h-[50px] cursor-pointer" />
+              <img src={Facebook} alt="Facebook" className="h-[40px] md:h-[50px] cursor-pointer" />
             </div>
             <p className="text-gray-300 mt-2">visiorama/agence.com</p>
           </div>

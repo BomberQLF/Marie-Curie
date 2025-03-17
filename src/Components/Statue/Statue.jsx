@@ -24,9 +24,9 @@ const AnimatedLights = () => {
 
   useEffect(() => {
     const timeline = gsap.timeline({ repeat: -1, yoyo: true });
-    timeline.to(light1.current.position, { duration: 6, x: 2, y: 4, z: 8, ease: 'power1.inOut' })
-            .to(light2.current.position, { duration: 6, x: -2, y: 3, z: 7, ease: 'power1.inOut' }, 0)
-            .to(light3.current.position, { duration: 6, x: 1, y: 5, z: 6, ease: 'power1.inOut' }, 0);
+    timeline.to(light1.current.position, { duration: 12, x: 2, y: 4, z: 8, ease: 'power1.inOut' })
+            .to(light2.current.position, { duration: 12, x: -2, y: 3, z: 7, ease: 'power1.inOut' }, 0)
+            .to(light3.current.position, { duration: 12, x: 1, y: 5, z: 6, ease: 'power1.inOut' }, 0);
   }, []);
 
   return (
@@ -42,16 +42,18 @@ const AnimatedLights = () => {
 const StatueContent = () => {
   const gltf = useLoader(GLTFLoader, '/scene/statuev3_v2.glb');
   const { camera } = useThree();
+  console.log("test");
+  
 
   useFrame(() => {
     camera.lookAt(0, 3.6, 7.8);
   });
 
   const timeline = gsap.timeline({ repeat: -1 });
-  timeline.to(camera.position, { duration: 12, x: -2, y: 2.5, z: 8.2, ease: 'power1.inOut' })
-          .to(camera.position, { duration: 12, x: 0, y: 4, z: 5, ease: 'power1.inOut' })
-          .to(camera.position, { duration: 12, x: 3, y: 3, z: 8, ease: 'power1.inOut' })
-          .to(camera.position, { duration: 12, x: 0, y: 4, z: 10, ease: 'power1.inOut' });
+  timeline.to(camera.position, { duration: 12, x: -2, y: 2.5, z: 8.2, ease: 'none' })
+          .to(camera.position, { duration: 12, x: 0, y: 4, z: 5, ease: 'none' })
+          .to(camera.position, { duration: 12, x: 3, y: 3, z: 8, ease: 'none' })
+          .to(camera.position, { duration: 12, x: 0, y: 4, z: 10, ease: 'none' });
 
   return (
     <primitive object={gltf.scene} scale={1} position={[0, -2.1, 7.8]} rotation={[0, 4.1, 0]} />

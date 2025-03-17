@@ -16,6 +16,9 @@ body {
 #root {
   height: 100vh;
 }
+.btn-trailer {
+  transform: translate(-50%, -50%);
+}
 
 .grid .dv {
   border: 0.5px solid white;
