@@ -32,8 +32,8 @@ const AnimatedLights = () => {
   return (
     <>
       <pointLight ref={light1} position={[0, 4, 10]} color={'#ffff99'} intensity={0.9} />
-      <pointLight ref={light2} position={[1, 3, 8.3]} intensity={1} color={'#99ff99'} />
-      <pointLight ref={light3} position={[0, 3.8, 5.2]} intensity={1} color={'#99ff99'} />
+      <pointLight ref={light2} position={[1, 3, 8.3]} intensity={10} color={'#ffff'} />
+      <pointLight ref={light3} position={[0, 3.8, 5.2]} intensity={10} color={'#ffff'} />
       <pointLight ref={lightHelper} position={[-0.6, 4.4, 8.5]} intensity={0.8} color={'#d38b97'} />
     </>
   );
