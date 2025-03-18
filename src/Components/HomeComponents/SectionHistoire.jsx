@@ -24,11 +24,56 @@ const SectionHistoire = () => {
         }
       }
     );
+
+    gsap.fromTo(".sectionHistoire h3", 
+      { y: 50, opacity: 0 }, 
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        scrollTrigger: {
+          trigger: ".sectionHistoire",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo(".sectionHistoire img", 
+      { x: -100, opacity: 0 }, 
+      { 
+        x: 0, 
+        opacity: 1, 
+        duration: 1, 
+        scrollTrigger: {
+          trigger: ".sectionHistoire",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.fromTo(".sectionHistoire p", 
+      { x: 100, opacity: 0 }, 
+      { 
+        x: 0, 
+        opacity: 1, 
+        duration: 1, 
+        scrollTrigger: {
+          trigger: ".sectionHistoire",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+        }
+      }
+    );
   }, []);
 
   return (
     <div className="h-screen w-screen flex items-center justify-center relative overflow-x-hidden sectionHistoire">
-      <img src={SmallBox} alt="SmallBox" className='absolute bottom-[0] left-[0] h-[150px] md:h-[200px] lg:h-[240px] bottomBox' />
+      <img src={SmallBox} alt="SmallBox" className='absolute bottom-[0] left-[30px] h-[150px] md:h-[200px] lg:h-[240px] bottomBox' />
       <img src={SmallBox} alt="SmallBox" className='absolute top-[-1.3rem] right-[20px] h-[150px] md:h-[200px] md:top-[-1.7rem] lg:h-[240px] lg:top-[2.1rem] topBox' />
       <div className="p-6 h-[90vh] justify-center w-[85vw] border-[3px] border-white border-solid flex flex-col items-center lg:p-24 xl:p-16 content relative">
         <div className='flex justify-center items-center relative'>
