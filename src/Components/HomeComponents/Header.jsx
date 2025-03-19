@@ -12,7 +12,7 @@ const Header = () => {
         </h2>
         <div className="mt-6">
           <div className="absolute bottom-[50px] left-[50%] btn-trailer">
-            <div className="border border-white rounded-[22px] px-[0.75rem] py-2 text-center md:m-auto md:max-w-[350px] lg:max-w-[390px] bg-white">
+            <div className="border border-white rounded-[22px] px-[0.75rem] py-2 text-center md:m-auto md:max-w-[350px] lg:max-w-[400px] bg-white">
               <div>
                 <a className="font-thin md:text-lg lg:text-xl text-black lg:px-[6.5rem] lg:py-[1rem]" href="#">
                   {t("trailer_accueil")}

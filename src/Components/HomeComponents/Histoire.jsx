@@ -62,7 +62,7 @@ const Histoire = () => {
           <p className="text-white font-thin mt-12 max-w-full lg:max-w-[80%] lg:mb-12">{t("histoire_intro")}</p>
         </div>
         <div className="flex flex-col lg:flex-row mt-6 lg:mt-0">
-          <Link to="/">
+          <Link to="/#histoire">
             <button className="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition mb-4 lg:mb-0">
               {t("back")}
             </button>
