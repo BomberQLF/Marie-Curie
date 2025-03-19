@@ -6,28 +6,33 @@ import Button from "./Button";
 import { useTranslation } from "react-i18next";
 
 const Step1 = () => {
-  const [selectedDate, setSelectedDate] = useState(localStorage.getItem("selectedDate") || null);
-  const [selectedTime, setSelectedTime] = useState(localStorage.getItem("selectedTime") || null);
+  const [selectedDate, setSelectedDate] = useState(
+    localStorage.getItem("selectedDate") !== "null" ? localStorage.getItem("selectedDate") : null
+  );
+  const [selectedTime, setSelectedTime] = useState(
+    localStorage.getItem("selectedTime") !== "null" ? localStorage.getItem("selectedTime") : null
+  );  
   const [reset, setReset] = useState(false);
   const { t } = useTranslation();
 
   const horaires = [
-    "10:30",
-    "11:30",
-    "12:30",
-    "13:30",
-    "14:30",
-    "15:30",
-    "16:30",
-    "17:30",
-    "18:30",
+    "10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30"
   ];
 
   useEffect(() => {
-    localStorage.setItem("selectedDate", selectedDate);
-    localStorage.setItem("selectedTime", selectedTime);
-  }, [selectedDate, selectedTime]);
+    if (selectedDate) {
+      localStorage.setItem("selectedDate", selectedDate);
+    } else {
+      localStorage.removeItem("selectedDate");
+    }
 
+    if (selectedTime) {
+      localStorage.setItem("selectedTime", selectedTime);
+    } else {
+      localStorage.removeItem("selectedTime");
+    }
+  }, [selectedDate, selectedTime]);
+  
   const handleDate = (date) => {
     setSelectedDate(date);
   };
@@ -39,11 +44,7 @@ const Step1 = () => {
   return (
     <div className="flex flex-col justify-between h-full">
       <div>
-        <Header
-          title={t("choose_date")}
-          subtitle={t("subtitle")}
-          step={t("etape1")}
-        />
+        <Header title={t("choose_date")} subtitle={t("subtitle")} step={t("etape1")} />
       </div>
       <div className="xl:flex xl:gap-56 flex-grow">
         <div className="mt-6 calendar">
@@ -59,10 +60,7 @@ const Step1 = () => {
         </div>
       </div>
       <div className="flex gap-4 justify-between mt-4 md:mt-6">
-        <Button
-          to="/"
-          text={t("retour")}
-        />
+        <Button to="/" text={t("retour")} />
         <Button
           to="/billeterie/step2"
           state={{ selectedDate, selectedTime }}

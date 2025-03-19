@@ -12,7 +12,6 @@ const Step2 = () => {
   const [selectedTime, setSelectedTime] = useState(location.state?.selectedTime || localStorage.getItem("selectedTime"));
   const [counterNormal, setCounterNormal] = useState(parseInt(localStorage.getItem("counterNormal")) || 0);
   const [counterEtudiant, setCounterEtudiant] = useState(parseInt(localStorage.getItem("counterEtudiant")) || 0);
-  const [reset, setReset] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -78,12 +77,9 @@ const Step2 = () => {
             to="/billeterie/step3"
             state={{ selectedDate, selectedTime, counterNormal, counterEtudiant }}
             text={t("suivant")}
-            disabled={totalTickets === 0}
+            disabled={totalTickets === 0 || totalTickets > 10}
           />
         </div>
-        {/* <button onClick={resetForm} className="mt-4 p-2 bg-red-500 text-white rounded">
-          Réinitialiser le formulaire
-        </button> */}
       </div>
     </div>
   );
