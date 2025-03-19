@@ -37,8 +37,8 @@
   "arrow_text": "Plus d'informations",
   "experience": "Une expérience",
   "immersive": "immersive",
-  "histoire_intro": "Bienvenue dans l’exposition Marie Curie, Une vie de lumière et d'ombre. Vous vous apprêtez à vivre une expérience immersive qui vous plonge au cœur des moments décisifs de la vie de Marie Curie. À travers une série de tableaux représentant chaque étape clé de son parcours, vous découvrirez ses découverte s scientifiques majeures, ses luttes personnelles et son engagement indéfectible. Cette exposition vous offre un voyage visuel et émotionnel, où chaque tableau raconte une facette de l’histoire de cette figure emblématique, qui a profondément marqué l’histoire de la science et de l'humanité.",
-  "back": "Revenir en arrière",
+  "histoire_intro": "Bienvenue dans l’exposition Marie Curie, Une vie de lumière et d'ombre. Vous vous apprêtez à vivre une expérience immersive qui vous plonge au cœur des moments décisifs de la vie de Marie Curie. À travers une série de tableaux représentant chaque étape clé de son parcours, vous découvrirez ses découvertes scientifiques majeures, ses luttes personnelles et son engagement indéfectible. Cette exposition vous offre un voyage visuel et émotionnel, où chaque tableau raconte une facette de l’histoire de cette figure emblématique, qui a profondément marqué l’histoire de la science et de l'humanité.",
+  "back": "Revenir à l'accueil",
   "discover_exhibition": "Découvrir l’exposition",
   "histoire_title_01": "Marie Curie : Un voyage vers l'inconnu",
   "histoire_text_01": "Marie Curie déterminée à devenir scientifique, quitte sa Pologne natale pour Paris, prête à tout sacrifier pour étudier à la Sorbonne. Découvrez son voyage audacieux qui a marqué le début de son incroyable parcours vers l'inconnu.",
@@ -57,5 +57,6 @@
   "life_of": "Une vie de",
   "light_and_shadow": "lumière et d'ombre",
   "maria_intro": "Maria Skłodowska, plus tard connue sous le nom de Marie Curie, était une scientifique franco-polonaise qui a révolutionné l'étude de la radioactivité.",
+  "maria_legacy": "Ses recherches ont été fondamentales pour la médecine moderne et la physique. Malgré les défis liés à son statut de femme scientifique à son époque, Maria Skłodowska a laissé un héritage scientifique exceptionnel qui inspire encore aujourd'hui.",
   "about": "À propos"
 }
