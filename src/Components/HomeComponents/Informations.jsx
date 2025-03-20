@@ -3,6 +3,7 @@ import Grid from '/assets/aproposGrille.png';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Informations = () => {
   const { t } = useTranslation();
@@ -66,6 +67,21 @@ const Informations = () => {
         }
       }
     );
+
+    gsap.fromTo(".sectionApropos .exposition-title", 
+      { y: 50, opacity: 0 }, 
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        scrollTrigger: {
+          trigger: ".sectionApropos",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+        }
+      }
+    );
   }, []);
   
 
@@ -77,7 +93,7 @@ const Informations = () => {
           <img src={Grid} alt="Grid" className='md:w-[80%] lg:w-[90%] xl:w-full' />
         </div>
         <div className="mt-6 xl:mt-0 xl:w-1/2 xl:pl-12">
-          <h3 className="text-white">L'Exposition Physique</h3>
+          <h3 className="exposition-title text-white text-2xl md:text-4xl lg:text-5xl ml-4 mb-4">L'Exposition Physique</h3>
           <p className='text-white font-thin text-sm md:text-xl lg:text-2xl'>
             {t("maria_intro")}
           </p>
@@ -85,6 +101,13 @@ const Informations = () => {
           <p className='text-white font-thin text-sm md:text-xl lg:text-2xl'>
             {t("maria_legacy")}
           </p>
+          <div className="mt-6">
+            <Link to="/billeterie">
+              <button className="border border-white text-white px-6 py-2 lg:px-10 lg:py-4 rounded-full hover:bg-white hover:text-black transition">
+                {t("billeterie")}
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
