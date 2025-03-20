@@ -77,6 +77,7 @@ const Informations = () => {
           <img src={Grid} alt="Grid" className='md:w-[80%] lg:w-[90%] xl:w-full' />
         </div>
         <div className="mt-6 xl:mt-0 xl:w-1/2 xl:pl-12">
+          <h3 className="text-white">L'Exposition Physique</h3>
           <p className='text-white font-thin text-sm md:text-xl lg:text-2xl'>
             {t("maria_intro")}
           </p>
