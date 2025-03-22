@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import SmallBox from '/assets/smallBox.svg';
 import Circle from '/assets/circleHistoire.svg';
-import CliqueCircle from '/assets/cliqueHistoire.svg';
+import CliqueCircle from '/assets/decouvreCircle.svg';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import gsap from "gsap";

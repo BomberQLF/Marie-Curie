@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import EtiquetteHistoire from "./EtiquetteHistoire";
 import Clique from '/assets/cliqueHistoire.svg';
+import ArrowDown from "/assets/arrowDown.svg";
 import { Link } from "react-router-dom";
 
 const Histoire = () => {
@@ -23,31 +24,31 @@ const Histoire = () => {
       title: t("histoire_title_01"),
       num: "01",
       text: t("histoire_text_01"),
-      img: "/assets/01.png",
+      img: "/assets/05.jpg",
     },
     {
       title: t("histoire_title_02"),
       num: "02",
       text: t("histoire_text_02"),
-      img: "/assets/02.png",
+      img: "/assets/04.jpg",
     },
     {
       title: t("histoire_title_03"),
       num: "03",
       text: t("histoire_text_03"),
-      img: "/assets/03.png",
+      img: "/assets/03.jpg",
     },
     {
       title: t("histoire_title_04"),
       num: "04",
       text: t("histoire_text_04"),
-      img: "/assets/04.png",
+      img: "/assets/01.jpg",
     },
     {
       title: t("histoire_title_05"),
       num: "05",
       text: t("histoire_text_05"),
-      img: "/assets/05.png",
+      img: "/assets/02.jpg",
     },
   ];
 
@@ -77,8 +78,14 @@ const Histoire = () => {
           onClick={handleCounter}
           src={Clique}
           alt="Cliquer pour voir l'étape suivante"
-          className="absolute top-[50%] right-[-10%] lg:right-[-10%] cursor-pointer z-10"
-        />      
+          className="hidden lg:block absolute top-[50%] right-[-10%] cursor-pointer z-10"
+        />
+        <img
+          onClick={handleCounter}
+          src={ArrowDown}
+          alt="Cliquer pour voir l'étape suivante"
+          className="block lg:hidden absolute top-[80%] right-[10%] cursor-pointer z-10"
+        />
       </div>
       <div className="w-full lg:w-1/2">
         <EtiquetteHistoire data={dataHistoire} num={counter} />
