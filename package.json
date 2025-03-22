@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.34",
     "@react-three/drei": "^10.0.0",
     "@react-three/fiber": "^9.0.4",
     "axios": "^1.8.3",
@@ -21,10 +22,12 @@
     "i18next-http-backend": "^3.0.2",
     "lucide-react": "^0.476.0",
     "maath": "^0.10.8",
+    "postmark": "^4.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
     "react-router-dom": "^7.2.0",
+    "resend": "^4.1.2",
     "uuid": "^11.1.0",
     "uuid-by-string": "^4.0.0",
     "wouter": "^3.6.0"
