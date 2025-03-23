@@ -74,10 +74,17 @@ const AnimatedLights = () => {
 };
 
 const StatueContent = () => {
-  const gltf = useLoader(GLTFLoader, "https://threejs.org/examples/models/gltf/Duck/glTF-Binary/Duck.glb");
   const { camera } = useThree();
 
   useEffect(() => {
+    fetch('/scene/V3_statue_texture_white-marble.glb')
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP status ${res.status}`);
+        return res.blob();
+      })
+      .then(blob => console.log("✅ Modèle GLB chargé avec succès :", blob))
+      .catch(err => console.error("❌ Erreur de chargement du GLB :", err));
+
     const timeline = gsap.timeline({ repeat: -1 });
     timeline.to(camera.position, { duration: 12, x: -2, y: 2.5, z: 8.2, ease: 'none' })
       .to(camera.position, { duration: 12, x: 0, y: 4, z: 5, ease: 'none' })
@@ -88,7 +95,10 @@ const StatueContent = () => {
   useFrame(() => camera.lookAt(0, 3.6, 7.8));
 
   return (
-    <primitive object={gltf.scene} scale={1} position={[0, -2.1, 7.8]} rotation={[0, 4.1, 0]} />
+    <mesh>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="red" />
+    </mesh>
   );
 };
 
