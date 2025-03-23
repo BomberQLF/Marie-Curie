@@ -74,7 +74,7 @@ const AnimatedLights = () => {
 };
 
 const StatueContent = () => {
-  const gltf = useLoader(GLTFLoader, 'const gltf = useLoader(GLTFLoader, "https://threejs.org/examples/models/gltf/Duck/glTF-Binary/Duck.glb");');
+  const gltf = useLoader(GLTFLoader, "https://threejs.org/examples/models/gltf/Duck/glTF-Binary/Duck.glb");
   const { camera } = useThree();
 
   useEffect(() => {
