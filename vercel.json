@@ -1,0 +1,11 @@
+{
+    "headers": [
+      {
+        "source": "/scene/(.*).glb",
+        "headers": [
+          { "key": "Content-Type", "value": "model/gltf-binary" }
+        ]
+      }
+    ]
+  }
+  
