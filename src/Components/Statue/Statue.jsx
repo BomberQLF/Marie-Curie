@@ -75,7 +75,7 @@ const AnimatedLights = () => {
 
 const StatueContent = () => {
   const { camera } = useThree();
-  const gltf = useLoader(GLTFLoader, '/scene/V3_statue_texture_white-marble.glb');
+  const gltf = useLoader(GLTFLoader, `/scene/V3_statue_texture_white-marble.glb?${Date.now()}`);
 
   useEffect(() => {
     const timeline = gsap.timeline({ repeat: -1 });
