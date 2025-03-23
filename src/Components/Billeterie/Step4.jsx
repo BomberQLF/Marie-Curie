@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Recap from "./Recap";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-import SendEmail from "./SendEmail";
 
 const Step4 = () => {
   const location = useLocation();
@@ -87,13 +86,6 @@ const Step4 = () => {
         "https://mcapi.duhez.butmmi.o2switch.site/index.php/reservations/",
         dataReservation,
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
-      );
-
-      // Envoyer l'email de confirmation
-      await SendEmail(
-        email,
-        "Confirmation de réservation",
-        `Bonjour ${name} ${lastname},\n\nVotre réservation pour l'exposition Marie Curie a été confirmée.\n\nDate: ${selectedDate}\nHeure: ${selectedTime}\n\nMerci de votre visite !`
       );
 
       localStorage.clear();

@@ -2,6 +2,7 @@ import LogoVisiorama from "/assets/visiorama.svg";
 import Facebook from "/assets/Facebook.svg";
 import Instagram from "/assets/Instagram.svg";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -26,9 +27,9 @@ const Footer = () => {
 
           <div className="flex flex-col md:items-start">
             <div className="flex gap-6">
-              <a href="#" className="hover:text-gray-400">{t("legal_mentions")}</a>
+              <Link to="/mentions" className="hover:text-gray-400">{t("legal_mentions")}</Link>
               <span>|</span>
-              <a href="#" className="hover:text-gray-400">{t("terms_conditions")}</a>
+              <Link to="/mentions" className="hover:text-gray-400">{t("terms_conditions")}</Link>
             </div>
             <p className="text-gray-500 mt-2">{t("all_rights_reserved")}</p>
           </div>

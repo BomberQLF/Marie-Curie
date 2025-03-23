@@ -22,7 +22,7 @@ const Recap = ({ date, time, counterNormal, counterEtudiant, name, lastname, tot
                 <div className="text-sm md:text-lg lg:text-xl">{`x${counterNormal}`}</div>
             </div>
             <div className="flex justify-between">
-                <div className="text-sm md:text-lg lg:text-xl">{t("tarif_normal_resume")}</div>
+                <div className="text-sm md:text-lg lg:text-xl">{t("tarif_etudiant_resume")}</div>
                 <div className="text-sm md:text-lg lg:text-xl">{`x${counterEtudiant}`}</div>
             </div>
         </div>

@@ -30,7 +30,7 @@ const CurveAnimation = ({ reverse = false }) => {
   }, []);
 
   useFrame(() => {
-    progress.current = (progress.current + 0.002) % 1;
+    progress.current = (progress.current + 0.001) % 1;
     const t = (reverse ? 1 - progress.current : progress.current) % 1;
     const lightPoint = curve.getPointAt(t);
     if (lightRef.current) {
@@ -51,9 +51,9 @@ const CurveAnimation = ({ reverse = false }) => {
     <>
       <line ref={lineRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={reverse ? '#81CB54' : 'white'} linewidth={1} />
+        <lineBasicMaterial color={reverse ? '#81CB54' : 'white'} linewidth={.5} />
       </line>
-      <pointLight ref={lightRef} color={reverse ? '#81CB54' : 'white'} intensity={.7} />
+      <pointLight ref={lightRef} color={reverse ? '#81CB54' : 'white'} intensity={.5} />
     </>
   );
 };
