@@ -2,7 +2,7 @@ import { Canvas, useLoader, useFrame, useThree } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Resize } from '@react-three/drei';
 import gsap from 'gsap';
-import { useRef, useEffect, useMemo } from 'react';
+import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
 const CurveAnimation = ({ reverse = false }) => {
@@ -30,7 +30,7 @@ const CurveAnimation = ({ reverse = false }) => {
   }, []);
 
   useFrame(() => {
-    progress.current = (progress.current + 0.001) % 1;
+    progress.current = (progress.current + 0.001) % 1; // Réduire la vitesse en diminuant l'incrément
     const t = (reverse ? 1 - progress.current : progress.current) % 1;
     const lightPoint = curve.getPointAt(t);
     if (lightRef.current) {
@@ -51,9 +51,9 @@ const CurveAnimation = ({ reverse = false }) => {
     <>
       <line ref={lineRef}>
         <bufferGeometry />
-        <lineBasicMaterial color={reverse ? '#81CB54' : 'white'} linewidth={.5} />
+        <lineBasicMaterial color={reverse ? '#81CB54' : 'white'} linewidth={1} />
       </line>
-      <pointLight ref={lightRef} color={reverse ? '#81CB54' : 'white'} intensity={.5} />
+      <pointLight ref={lightRef} color={reverse ? '#81CB54' : 'white'} intensity={.7} />
     </>
   );
 };
@@ -74,14 +74,8 @@ const AnimatedLights = () => {
 };
 
 const StatueContent = () => {
+  const gltf = useLoader(GLTFLoader, '/scene/V3_statue_texture_white-marble.glb');
   const { camera } = useThree();
-  const gltfUrl = useMemo(() => `/scene/V3_statue_texture_white-marble.glb`, []);
-  const gltf = useLoader(GLTFLoader, gltfUrl);
-  console.log("GLTF Loaded:", gltf); 
-
-  if (!gltf || !gltf.scene) {
-    return <mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="red" /></mesh>;
-  }
 
   useEffect(() => {
     const timeline = gsap.timeline({ repeat: -1 });
@@ -93,9 +87,10 @@ const StatueContent = () => {
 
   useFrame(() => camera.lookAt(0, 3.6, 7.8));
 
-  return <primitive object={gltf.scene} scale={1} position={[0, 0, 3]} />;
+  return (
+    <primitive object={gltf.scene} scale={1} position={[0, -2.1, 7.8]} rotation={[0, 4.1, 0]} />
+  );
 };
-
 
 const Statue = () => (
   <Canvas camera={{ position: [0, 4, 10], fov: 60 }} shadows>
@@ -107,5 +102,7 @@ const Statue = () => (
     <Resize />
   </Canvas>
 );
+
+
 
 export default Statue;
