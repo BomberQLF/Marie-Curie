@@ -77,6 +77,12 @@ const StatueContent = () => {
   const { camera } = useThree();
   const gltf = useLoader(GLTFLoader, `/scene/V3_statue_texture_white-marble.glb?${Date.now()}`);
 
+  console.log("GLTF Loaded:", gltf); 
+
+  if (!gltf || !gltf.scene) {
+    return <mesh><boxGeometry args={[1, 1, 1]} /><meshStandardMaterial color="red" /></mesh>;
+  }
+
   useEffect(() => {
     const timeline = gsap.timeline({ repeat: -1 });
     timeline.to(camera.position, { duration: 12, x: -2, y: 2.5, z: 8.2, ease: 'none' })
@@ -89,6 +95,7 @@ const StatueContent = () => {
 
   return <primitive object={gltf.scene} scale={1} position={[0, 0, 3]} />;
 };
+
 
 const Statue = () => (
   <Canvas camera={{ position: [0, 4, 10], fov: 60 }} shadows>
