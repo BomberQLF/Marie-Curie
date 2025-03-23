@@ -2,7 +2,7 @@ import { Canvas, useLoader, useFrame, useThree } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Resize } from '@react-three/drei';
 import gsap from 'gsap';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 import * as THREE from 'three';
 
 const CurveAnimation = ({ reverse = false }) => {
@@ -75,8 +75,8 @@ const AnimatedLights = () => {
 
 const StatueContent = () => {
   const { camera } = useThree();
-  const gltf = useLoader(GLTFLoader, `/scene/V3_statue_texture_white-marble.glb?${Date.now()}`);
-
+  const gltfUrl = useMemo(() => `/scene/V3_statue_texture_white-marble.glb`, []);
+  const gltf = useLoader(GLTFLoader, gltfUrl);
   console.log("GLTF Loaded:", gltf); 
 
   if (!gltf || !gltf.scene) {
