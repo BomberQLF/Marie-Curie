@@ -1,4 +1,5 @@
 import LogoVisiorama from "/assets/visiorama.svg";
+import Logo from "/assets/logo.png";
 import Facebook from "/assets/Facebook.svg";
 import Instagram from "/assets/Instagram.svg";
 import { useTranslation } from "react-i18next";
@@ -10,12 +11,14 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-10 px-6 md:px-24">
       <div className="flex flex-col items-center md:items-start gap-6 w-full">
-        <img
-          src={LogoVisiorama}
-          alt="Logo Visiorama"
-          className="w-[200px] md:w-[300px] lg:w-[400px]"
-        />
-
+        <div className="flex gap-6"> 
+          <img src={Logo} alt="Logo Marie curie" className="w-[160px]" />
+          <img
+            src={LogoVisiorama}
+            alt="Logo Visiorama"
+            className="w-[160px]"
+          />
+        </div>
         <div className="flex flex-col md:flex-row justify-between w-full gap-6">
           <div className="flex flex-col md:items-start">
             <div className="flex gap-4">

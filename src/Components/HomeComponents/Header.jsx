@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const Header = () => {
+const Header = ({ onOpenPopup }) => {
   const { t } = useTranslation();
 
   return (
@@ -14,7 +14,7 @@ const Header = () => {
           <div className="absolute bottom-[50px] left-[50%] btn-trailer">
             <div className="border border-white rounded-[22px] px-[0.75rem] py-2 text-center md:m-auto md:max-w-[350px] lg:max-w-[400px] bg-white">
               <div>
-                <a className="font-thin md:text-lg lg:text-xl text-black lg:px-[6.5rem] lg:py-[1rem]" href="#">
+                <a className="font-thin md:text-lg lg:text-xl text-black lg:px-[6.5rem] lg:py-[1rem]" href="#" onClick={onOpenPopup}>
                   {t("trailer_accueil")}
                 </a>
               </div>

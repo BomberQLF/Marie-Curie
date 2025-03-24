@@ -30,7 +30,7 @@ const Histoire = () => {
       title: t("histoire_title_02"),
       num: "02",
       text: t("histoire_text_02"),
-      img: "/assets/04.jpg",
+      img: "/assets/01.jpg",
     },
     {
       title: t("histoire_title_03"),
@@ -42,7 +42,7 @@ const Histoire = () => {
       title: t("histoire_title_04"),
       num: "04",
       text: t("histoire_text_04"),
-      img: "/assets/01.jpg",
+      img: "/assets/04.jpg",
     },
     {
       title: t("histoire_title_05"),
@@ -68,11 +68,11 @@ const Histoire = () => {
               {t("back")}
             </button>
           </Link>
-          <Link to="/gallery">
+          <a href="https://mariecuriegalerie.duhez.butmmi.o2switch.site/">
             <button className="border mt-4 lg:mt-0 lg:ml-10 border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
               {t("discover_exhibition")}
             </button>
-          </Link>
+          </a>
         </div>
         <img
           onClick={handleCounter}

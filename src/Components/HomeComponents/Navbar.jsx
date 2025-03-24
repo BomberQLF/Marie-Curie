@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "/assets/logo.svg";
+import Logo from "/assets/logo.png";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
@@ -28,7 +28,7 @@ const Navbar = () => {
         <div>
           <Link to={"/"}>
             <img
-              className="max-w-[70%] md:max-w-[80%] lg:max-w-[100%]"
+              className="max-w-[30%] md:max-w-[20%] lg:max-w-[15%]"
               src={Logo}
               alt="Logo"
             />
