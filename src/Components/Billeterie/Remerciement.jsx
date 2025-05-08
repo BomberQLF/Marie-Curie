@@ -19,7 +19,9 @@ const Remerciement = () => {
             </div>
             <div>
                 <Link to="/">
-                    <div className='text-center text-sm px-[1rem] py-[.5rem] rounded-[22px] text-black bg-white md:text-xl'>{t("confirmer_accueil")}</div>
+                    <div className='text-center text-xs px-[0.5rem] py-[0.25rem] rounded-[12px] text-black bg-white md:text-sm md:px-[0.75rem] md:py-[0.5rem] w-[200px] mx-auto'> {/* Ajout de w-[200px] et mx-auto */}
+                        {t("confirmer_accueil")}
+                    </div>
                 </Link>
             </div>
         </div>  

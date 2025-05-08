@@ -46,8 +46,8 @@ const Step2 = () => {
         />
       </div>
       <div>
-        <div className="flex flex-col align-center lg:gap-12 xl:flex-row">
-          <div className="flex flex-col">
+        <div className="flex flex-col align-center gap-6 md:gap-8 lg:gap-12 xl:flex-row xl:items-center xl:justify-between">
+          <div className="flex flex-col w-full md:w-3/4 lg:w-2/3 xl:w-1/2">
             <BilletTarif
               ticketName={t("ticket_normal")}
               price={"10 euros"}
@@ -63,11 +63,11 @@ const Step2 = () => {
               decrement={decrementCounterEtudiant}
             />
           </div>
-          <div>
-            <img src={ImgBillet} alt="Billet" />
+          <div className="mt-6 xl:mt-0 w-full md:w-1/2 lg:w-1/3 xl:w-1/3"> 
+            <img src={ImgBillet} alt="Billet" className="w-full h-auto" /> 
           </div>
         </div>
-        <div className="flex gap-4 justify-between mt-6">
+        <div className="flex flex-col md:flex-row gap-4 justify-between mt-6"> 
           <Button
             to="/billeterie/step1"
             state={{ selectedDate, selectedTime }}

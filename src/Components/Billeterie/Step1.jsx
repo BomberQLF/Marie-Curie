@@ -46,6 +46,9 @@ const Step1 = () => {
       <div>
         <Header title={t("choose_date")} subtitle={t("subtitle")} step={t("etape1")} />
       </div>
+      <p className="text-s text-gray-400 mb-4">
+          {t("asterixBis")}
+        </p>
       <div className="xl:flex xl:gap-56 flex-grow">
         <div className="mt-6 calendar">
           <Calendar selectedDate={handleDate} />
@@ -59,7 +62,7 @@ const Step1 = () => {
           <Creneau creneaux={horaires} title={t("creneau")} onClick={handleTime} reset={reset} />
         </div>
       </div>
-      <div className="flex gap-4 justify-between mt-4 md:mt-6">
+      <div className="flex gap-2 justify-between mt-4 md:mt-6">
         <Button to="/" text={t("retour")} />
         <Button
           to="/billeterie/step2"

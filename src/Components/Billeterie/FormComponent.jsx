@@ -12,6 +12,7 @@ const FormComponent = ({ formData, handleChange }) => {
             <input
               type="text"
               name="name"
+              aria-label="Prénom"
               value={formData.name}
               onChange={handleChange}
               placeholder="Prénom*"
@@ -25,6 +26,7 @@ const FormComponent = ({ formData, handleChange }) => {
             <input
               type="text"
               name="lastname"
+              aria-label="Nom"
               value={formData.lastname}
               onChange={handleChange}
               placeholder="Nom*"
@@ -39,6 +41,7 @@ const FormComponent = ({ formData, handleChange }) => {
           <input
             type="email"
             name="email"
+            aria-label="Email"
             value={formData.email}
             onChange={handleChange}
             placeholder="mail@exemple.com*"
