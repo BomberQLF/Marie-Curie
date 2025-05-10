@@ -68,7 +68,7 @@ const Histoire = () => {
               {t("back")}
             </button>
           </Link>
-          <a href="https://mariecuriegalerie.duhez.butmmi.o2switch.site/">
+          <a href="https://gallery.marie-curie-ombres-lumieres.fr/">
             <button className="border mt-4 lg:mt-0 lg:ml-10 border-white text-black px-6 py-2 rounded-full bg-white">
               {t("discover_exhibition")}
             </button>
