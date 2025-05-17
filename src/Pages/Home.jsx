@@ -40,7 +40,7 @@ const Home = () => {
       </div>
       {isPopupOpen && (
         <Popup
-          videoUrl="https://www.youtube.com/embed/EbwaAL-aTsI"
+          videoUrl="https://www.youtube.com/embed/eJfI5D7kXoA?si=3m8-mlLLo0OmrNhv"
           onClose={handleClosePopup}
         />
       )}
